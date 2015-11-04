@@ -1,0 +1,17 @@
+{
+  "name": "solofront-grav-theme",
+  "version": "1.0.0",
+  "description": "Simple, clean and blazing fast developers theme for GRAV cms.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "grav",
+    "theme",
+    "white",
+    "sidebar"
+  ],
+  "author": "Nerijus Gudas",
+  "license": "ISC"
+}
