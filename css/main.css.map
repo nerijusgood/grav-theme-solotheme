@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.css"],"names":[],"mappings":"AACA,KACC,eAAiB,CACjB","file":"main.css","sourcesContent":["$red: #000;\nhtml {\n\tbackground: $red;\n}\n"],"sourceRoot":"/source/"}
