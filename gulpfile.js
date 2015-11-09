@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var plumber = require('gulp-plumber');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var concat = require('gulp-concat');
@@ -23,7 +24,7 @@ var paths = {
 gulp.task('browser-sync', function() {
 	browserSync({
 		files: "css/*.css",
-		proxy: "localhost:8000",
+		proxy: "http://localhost:8888/Personal/solofront/",
 		port: '8000'
 	});
 });
@@ -48,13 +49,14 @@ gulp.task('css', function () {
 // Build CSS
 gulp.task('css', function () {
 	var processors = [
-		cssnested,
 		cssimport,
-		csssimplevars,
 		cssnext(),
+		csssimplevars,
+		cssnested,
 		cssnano
 	];
 	return gulp.src('./src/css/main.css')
+		.pipe(plumber())
 		.pipe(sourcemaps.init())
 			.pipe(postcss(processors))
 		.pipe(sourcemaps.write('.'))
@@ -65,6 +67,7 @@ gulp.task('css', function () {
 // Build JS
 gulp.task('js', ['clean-js'], function() {
 	return gulp.src(paths.js)
+		.pipe(plumber())
 		.pipe(sourcemaps.init())
 			.pipe(uglify())
 			.pipe(concat('all.min.js'))
@@ -75,7 +78,7 @@ gulp.task('js', ['clean-js'], function() {
 // Build Img
 gulp.task('img', ['clean-img'], function() {
 	return gulp.src(paths.img)
-		// Pass in options to the task
+		.pipe(plumber())
 		.pipe(imagemin({optimizationLevel: 5}))
 		.pipe(gulp.dest('img'));
 });
@@ -92,4 +95,5 @@ gulp.task('default', ['watch', 'browser-sync'], function () {
 	gulp.watch('css/*.css', ['css']).on('change', reload);
 	gulp.watch('js/*.js', ['js']).on('change', reload);
 	gulp.watch('img/*.jpg', ['img']).on('change', reload);
+	gulp.watch('templates/**/*.twig').on('change', reload);
 });

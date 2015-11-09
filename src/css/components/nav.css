@@ -1,0 +1,18 @@
+.nav {
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 20px 0 30px;
+
+		li a {
+			display: block;
+			font-size: 24px;
+			font-family: $fontBlack;
+			color: $colorGray;
+			margin: 10px 0;
+
+			&:hover {
+			}
+		}
+	}
+}

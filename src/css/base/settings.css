@@ -1,0 +1,27 @@
+/* Color */
+$colorActive: #59b0ba;
+$colorGray: #5f6b70;
+$colorGrayLight: #cdd1d2;
+$colorGrayLightest: #f4f4f4;
+
+$colorBg: $colorGrayLightest;
+$colorHeaderBg: #fff;
+
+
+/* Sizes */
+$baseSize: 1rem;
+
+/* Z-Index */
+$ztop: 999;
+$zmid: 99;
+$zmin: 3;
+
+@custom-media --viewport-small (min-width: 30rem);	/* 480 */
+@custom-media --viewport-medium (min-width: 48rem);	/* 768 */
+@custom-media --viewport-large (min-width: 64rem);	/* 1024 */
+@custom-media --viewport-mega (min-width: 74rem);	/* 1024 */
+@custom-media --viewport-huge (min-width: 80rem);		/* 1200 */
+
+html * {
+	box-sizing: border-box;
+}

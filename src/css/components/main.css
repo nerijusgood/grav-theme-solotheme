@@ -1,0 +1,13 @@
+.main {
+	padding-left: 0;
+	width: 100%;
+	background-color: $colorBg;
+
+	@media (--viewport-medium) {
+		padding-left: 300px;
+	}
+
+	@media (--viewport-large) {
+		padding-left: 350px;
+	}
+}

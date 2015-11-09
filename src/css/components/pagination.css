@@ -1,0 +1,30 @@
+ul.pagination {
+	width: 100%;
+	display: flex;
+	list-style: none;
+	padding: 0;
+	margin-bottom: 5px;
+	align-items: center;
+	justify-content: center;
+
+	li {
+		position: relative;
+		display: flex;
+		width: 30px;
+		height: 30px;
+		margin: 0 5px;
+		background-color: $colorGrayLight;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+
+		a {
+			width: 100%;
+			text-align: center;
+			height: 30px;
+			line-height: 30px;
+			background-color: $colorActive;
+			color: #fff;
+		}
+	}
+}

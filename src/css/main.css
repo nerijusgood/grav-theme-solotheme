@@ -1,4 +1,18 @@
-$red: #000;
-html {
-	background: $red;
-}
+@import "normalize.css";
+
+@import "base/settings";
+@import "base/fonts";
+@import "base/icons";
+
+@import "layout/layout";
+
+@import "typography/links";
+
+@import "components/main";
+@import "components/header";
+@import "components/nav";
+@import "components/forms";
+@import "components/article-micro";
+@import "components/article";
+@import "components/article-header";
+@import "components/pagination";

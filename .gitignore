@@ -19,4 +19,9 @@ bower_components
 
 # Project specific #
 ######################
-build/*
+css
+!src/css
+images
+!src/img
+js
+!src/js

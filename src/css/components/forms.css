@@ -1,0 +1,64 @@
+.form-group {
+	border: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+
+	input[type="text"],
+	input[type="search"],
+	input[type="password"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="number"],
+	input[type="submit"],
+	button {
+		line-height: 40px;
+		padding: 0 14px;
+		font-size: 12px;
+		width: 100%;
+		box-sizing: border-box;
+		border: none;
+		background-color: $colorGrayLightest;
+		-webkit-appearance: none;
+		color: $colorGray;
+		margin-bottom: 10px;
+
+		&:focus {
+			border: none;
+			outline: none;
+		}
+	}
+
+	button {
+		width: auto;
+	}
+
+	&.form-search {
+		position: relative;
+
+		label {
+			display: none;
+		}
+
+		input[type="search"] {
+			padding-right: 45px;
+		}
+
+		button {
+			background-color: $colorGrayLight;
+			position: absolute;
+			top: 0;
+			right: 0;
+			line-height: 40px;
+			padding: 0 14px;
+			margin: 0;
+			border: 0;
+
+			span {
+				color: white;
+				vertical-align: middle;
+			}
+		}
+	}
+}

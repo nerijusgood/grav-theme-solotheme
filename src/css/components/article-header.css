@@ -1,0 +1,55 @@
+.article {
+	width: 100%;
+	background-color: $colorHeaderBg;
+	margin: 10px 0;
+
+	img {
+		width: 100%;
+	}
+
+	.article-header,
+	.article-main,
+	.article-footer {
+		padding: 24px;
+	}
+
+	.article-header {
+		h2 {
+			margin: 0;
+			padding: 0;
+			line-height: 1;
+
+			a {
+				font-size: 55px;
+				font-family: $fontBlack;
+				text-transform: uppercase;
+				color: $colorGray;
+			}
+		}
+
+		ul.tags {
+			list-style: none;
+			margin: 0 0 10px;
+			padding: 0;
+
+			li {
+				display: inline-block;
+
+				a {
+					color: $colorGray;
+					font-size: 12px;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+
+	.article-main {
+
+	}
+	
+	.article-footer {
+		margin: 16px 0 0;
+		padding: 0;
+	}
+}

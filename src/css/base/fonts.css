@@ -1,0 +1,46 @@
+@font-face {
+	font-family: 'freightsans_problack';
+	src: url('../fonts/freigsanproblk-solofront.eot');
+	src: url('../fonts/freigsanproblk-solofront.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/freigsanproblk-solofront.woff2') format('woff2'),
+			 url('../fonts/freigsanproblk-solofront.woff') format('woff'),
+			 url('../fonts/freigsanproblk-solofront.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'freightsans_probook';
+	src: url('../fonts/freigsanprobook-solofront.eot');
+	src: url('../fonts/freigsanprobook-solofront.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/freigsanprobook-solofront.woff2') format('woff2'),
+			 url('../fonts/freigsanprobook-solofront.woff') format('woff'),
+			 url('../fonts/freigsanprobook-solofront.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'freightsans_prolight';
+	src: url('../fonts/freigsanprolig-solofront.eot');
+	src: url('../fonts/freigsanprolig-solofront.eot?#iefix') format('embedded-opentype'),
+			 url('vfreigsanprolig-solofront.woff2') format('woff2'),
+			 url('../fonts/freigsanprolig-solofront.woff') format('woff'),
+			 url('../fonts/freigsanprolig-solofront.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'freightsans_promedium';
+	src: url('../fonts/freigsanpromed-solofront.eot');
+	src: url('../fonts/freigsanpromed-solofront.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/freigsanpromed-solofront.woff2') format('woff2'),
+			 url('../fonts/freigsanpromed-solofront.woff') format('woff'),
+			 url('../fonts/freigsanpromed-solofront.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+$fontBlack: 'freightsans_problack', Arial, sans-serif;
+$fontMedium: 'freightsans_promedium', Arial, sans-serif;

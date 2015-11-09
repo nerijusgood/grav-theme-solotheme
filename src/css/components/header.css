@@ -1,0 +1,27 @@
+.header {
+	width: 100%;
+	position: relative;
+	height: 100%;
+	background-color: $colorHeaderBg;
+	padding: 40px 50px;
+
+	@media (--viewport-medium) {
+		width: 300px;
+		position: fixed;
+	}
+
+	@media (--viewport-large) {
+		width: 350px;
+	}
+}
+
+.logo {
+
+	a {
+		font-family: $fontBlack;
+		color: $colorActive;
+		font-size: 60px;
+		line-height: 0.8;
+		text-transform: uppercase;
+	}
+}
