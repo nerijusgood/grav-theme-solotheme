@@ -2,16 +2,22 @@
 	ul {
 		list-style: none;
 		padding: 0;
-		margin: 20px 0 30px;
+		margin: 40px 0 30px;
 
 		li a {
 			display: block;
 			font-size: 24px;
 			font-family: $fontBlack;
 			color: $colorGray;
-			margin: 10px 0;
+			margin: 4px 0;
+            padding: 0;
+            line-height: 1;
+			text-transform: uppercase;
+            transition: color 0.2s ease-in;
 
 			&:hover {
+                color: $colorActive;
+                transition: color 0.2s ease-in;
 			}
 		}
 	}

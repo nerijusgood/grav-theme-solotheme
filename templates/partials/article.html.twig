@@ -5,30 +5,36 @@
 	{% set header_image_height = page.header.header_image_height|defined(300) %}
 	{% set header_image_file = page.header.header_image_file %}
 
-	{% if header_image %}
-		{% if header_image_file %}
-			{% set header_image_media = page.media.images[header_image_file] %}
-		{% else %}
-			{% set header_image_media = page.media.images|first %}
-		{% endif %}
-		{{ header_image_media.cropZoom(header_image_width, header_image_height).html }}
-	{% endif %}
+
 
 	<header class="article-header">
-		<h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
-
-		{% if page.taxonomy.tag %}
-			<span class="tags">
-				{% for tag in page.taxonomy.tag %}
-				<a href="{{ blog.url }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
-				{% endfor %}
-			</span>
+		{% if header_image %}
+			{% if header_image_file %}
+				{% set header_image_media = page.media.images[header_image_file] %}
+			{% else %}
+				{% set header_image_media = page.media.images|first %}
+			{% endif %}
+			{{ header_image_media.cropZoom(header_image_width, header_image_height).html }}
 		{% endif %}
 
-		<span class="list-blog-date">
-			<span>{{ page.date|date("d") }}</span>
-			<em>{{ page.date|date("M") }}</em>
-		</span>
+		<div class="article-header-content">
+			<h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+
+			<div class="header-date">
+				<span>{{ page.date|date("d") }}</span>
+				<span>{{ page.date|date("M") }}</span>
+				<span>{{ page.date|date("Y") }}</span>
+			</div>
+
+			{% if page.taxonomy.tag %}
+				<ul class="tags">
+					{% for tag in page.taxonomy.tag %}
+					<li><a href="{{ blog.url }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a></li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		</div>
+
 	</header>
 
 	<main class="article-main">
@@ -48,5 +54,9 @@
 			</p>
 		{% endif %}
 	</footer>
+
+	<div class="comments">
+		{% include 'partials/comments.html.twig' with {'page': page} %}
+	</div>
 
 </article>

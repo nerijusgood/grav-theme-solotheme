@@ -8,11 +8,14 @@
 
 @import "typography/links";
 
-@import "components/main";
-@import "components/header";
+@import "partials/main";
+@import "partials/header";
+@import "partials/footer";
+
 @import "components/nav";
 @import "components/forms";
 @import "components/article-micro";
 @import "components/article";
 @import "components/article-header";
+@import "components/article-main";
 @import "components/pagination";

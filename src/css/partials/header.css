@@ -4,19 +4,19 @@
 	height: 100%;
 	background-color: $colorHeaderBg;
 	padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
 
 	@media (--viewport-medium) {
 		width: 300px;
 		position: fixed;
 	}
-
 	@media (--viewport-large) {
 		width: 350px;
 	}
 }
 
 .logo {
-
 	a {
 		font-family: $fontBlack;
 		color: $colorActive;

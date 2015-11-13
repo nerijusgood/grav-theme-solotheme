@@ -1,40 +1,44 @@
 <article class="article-micro">
 
-	{% set header_image = page.header.header_image|defined(true) %}
-	{% set header_image_width  = page.header.header_image_width|defined(425) %}
-	{% set header_image_height = page.header.header_image_height|defined(320) %}
-	{% set header_image_file = page.header.header_image_file %}
+    {% set header_image = page.header.header_image|defined(true) %}
+    {% set header_image_width  = page.header.header_image_width|defined(425) %}
+    {% set header_image_height = page.header.header_image_height|defined(320) %}
+    {% set header_image_file = page.header.header_image_file %}
 
-	{% if header_image %}
-		<a href="{{ page.url }}">
-			{% if header_image_file %}
-				{% set header_image_media = page.media.images[header_image_file] %}
-			{% else %}
-				{% set header_image_media = page.media.images|first %}
-			{% endif %}
-			{{ header_image_media.cropZoom(header_image_width, header_image_height).html }}
-		</a>
-	{% endif %}
+    {% if header_image %}
+        <a href="{{ page.url }}">
+            {% if header_image_file %}
+                {% set header_image_media = page.media.images[header_image_file] %}
+            {% else %}
+                {% set header_image_media = page.media.images|first %}
+            {% endif %}
+            {{ header_image_media.cropZoom(header_image_width, header_image_height).html }}
+        </a>
+    {% endif %}
 
-	<header>
-		{% if page.taxonomy.tag %}
-			<ul class="tags">
-				{% for tag in page.taxonomy.tag %}
-					<li>
-						<a href="{{ blog.url }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
-					</li>
-				{% endfor %}
-			</ul>
-		{% endif %}
+    <header>
+        {% if page.taxonomy.tag %}
+            <ul class="tags">
+                {% for tag in page.taxonomy.tag %}
+                    <li>
+                        <a href="{{ blog.url }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
 
-		<h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
+        <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
 
-	</header>
+    </header>
 
-	<footer>
-		<div class="date">
-			<span>{{ page.date|date("d") }}</span>
-			<span>{{ page.date|date("M") }}</span>
-		</div>
-	</footer>
+    <footer>
+        <div class="date">
+            <span>{{ page.date|date("d") }}</span>
+            <span>{{ page.date|date("M") }}</span>
+        </div>
+
+        <div class="time">
+            5 Min read
+        </div>
+    </footer>
 </article>

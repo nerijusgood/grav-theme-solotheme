@@ -1,0 +1,41 @@
+.footer {
+    margin-top: auto;
+
+    ul {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        li {
+            padding-right: 5px;
+
+            a {
+                font-size: 12px;
+                color: $colorActive;
+
+                &:after {
+                    content: '\2D';
+                    padding-left: 5px;
+                }
+            }
+
+            &:last-child {
+                a {
+                    &:after {
+                        content: '';
+                    }
+                }
+            }
+        }
+    }
+
+    p {
+        font-size: 11px;
+
+        a {
+            color: $colorActive;
+        }
+    }
+}

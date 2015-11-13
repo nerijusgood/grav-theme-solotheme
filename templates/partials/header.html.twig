@@ -1,7 +1,13 @@
 <header class="header">
 	<div class="logo">
-		<a href="#" alt="">Solo<br>front</a>
+		<a href="{{ base_url }}" alt="">Solo<br>front</a>
 	</div>
-	{% include 'partials/nav.html.twig' %}
+	<nav class="nav" role="navigation">
+		{% include 'partials/taxonomylist.html.twig' with {'base_url':new_base_url, 'taxonomy':'tag'} %}
+	</nav>
 	{% include 'partials/search_input.hmtl.twig' %}
+
+	<div class="footer">
+		{% include 'partials/nav.html.twig' %}
+	</div>
 </header>

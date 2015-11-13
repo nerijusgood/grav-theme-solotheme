@@ -10,6 +10,39 @@
 }
 
 @font-face {
+    font-family: 'source_sans_prolight';
+    src: url('../fonts/sourcesanspro-light-solofront.eot');
+    src: url('../fonts/sourcesanspro-light-solofront.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sourcesanspro-light-solofront.woff2') format('woff2'),
+         url('../fonts/sourcesanspro-light-solofront.woff') format('woff'),
+         url('../fonts/sourcesanspro-light-solofront.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'source_sans_proregular';
+    src: url('../fonts/sourcesanspro-regular-solofront.eot');
+    src: url('../fonts/sourcesanspro-regular-solofront.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sourcesanspro-regular-solofront.woff2') format('woff2'),
+         url('../fonts/sourcesanspro-regular-solofront.woff') format('woff'),
+         url('../fonts/sourcesanspro-regular-solofront.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+$fontBlack: 'freightsans_problack', Arial, sans-serif;
+$fontReg: 'source_sans_proregular', Arial, sans-serif;
+$fontLit: 'nsource_sans_prolight', Arial, sans-serif;
+
+html {
+    font-family: $fontReg;
+}
+
+
+@font-face {
 	font-family: 'freightsans_probook';
 	src: url('../fonts/freigsanprobook-solofront.eot');
 	src: url('../fonts/freigsanprobook-solofront.eot?#iefix') format('embedded-opentype'),
@@ -30,17 +63,3 @@
 	font-weight: normal;
 	font-style: normal;
 }
-
-@font-face {
-	font-family: 'freightsans_promedium';
-	src: url('../fonts/freigsanpromed-solofront.eot');
-	src: url('../fonts/freigsanpromed-solofront.eot?#iefix') format('embedded-opentype'),
-			 url('../fonts/freigsanpromed-solofront.woff2') format('woff2'),
-			 url('../fonts/freigsanpromed-solofront.woff') format('woff'),
-			 url('../fonts/freigsanpromed-solofront.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
-
-$fontBlack: 'freightsans_problack', Arial, sans-serif;
-$fontMedium: 'freightsans_promedium', Arial, sans-serif;

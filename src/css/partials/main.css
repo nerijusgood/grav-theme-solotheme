@@ -1,6 +1,7 @@
 .main {
 	padding-left: 0;
 	width: 100%;
+    min-height: 100vh;
 	background-color: $colorBg;
 
 	@media (--viewport-medium) {

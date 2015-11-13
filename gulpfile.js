@@ -1,8 +1,12 @@
 var gulp = require('gulp');
 var plumber = require('gulp-plumber');
+var gutil = require('gulp-util');
+var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
-var concat = require('gulp-concat');
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
 var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var sourcemaps = require('gulp-sourcemaps');
@@ -12,6 +16,7 @@ var cssnested = require('postcss-nested');
 var cssimport = require('postcss-import');
 var csssimplevars = require('postcss-simple-vars');
 var cssnano = require('cssnano');
+var del = require('del');
 
 
 var paths = {
@@ -43,7 +48,21 @@ gulp.task('clean-img', function() {
 	return del(['img']);
 });
 
-gulp.task('css', function () {
+// Build CSS-DEV
+gulp.task('css-dev', function () {
+    var processors = [
+        cssimport,
+        cssnext(),
+        csssimplevars,
+        cssnested
+    ];
+    return gulp.src('./src/css/main.css')
+        .pipe(plumber())
+        .pipe(sourcemaps.init())
+            .pipe(postcss(processors))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('./css'))
+        .pipe(reload({stream:true}));
 });
 
 // Build CSS
@@ -64,19 +83,39 @@ gulp.task('css', function () {
 		.pipe(reload({stream:true}));
 });
 
+// Build JS-DEV
+gulp.task('js-dev', function () {
+  var b = browserify({
+    debug: true
+  });
+
+  return b.bundle()
+    .pipe(source('./src/main.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({loadMaps: true}))
+        .on('error', gutil.log)
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('./js/'));
+});
+
 // Build JS
-gulp.task('js', ['clean-js'], function() {
-	return gulp.src(paths.js)
-		.pipe(plumber())
-		.pipe(sourcemaps.init())
-			.pipe(uglify())
-			.pipe(concat('all.min.js'))
-		.pipe(sourcemaps.write())
-		.pipe(gulp.dest('js'));
+gulp.task('js', function () {
+  var b = browserify({
+    debug: false
+  });
+
+  return b.bundle()
+    .pipe(source('./src/main.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(uglify())
+        .on('error', gutil.log)
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('./js/'));
 });
 
 // Build Img
-gulp.task('img', ['clean-img'], function() {
+gulp.task('img', function() {
 	return gulp.src(paths.img)
 		.pipe(plumber())
 		.pipe(imagemin({optimizationLevel: 5}))
@@ -85,15 +124,18 @@ gulp.task('img', ['clean-img'], function() {
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
-	gulp.watch(paths.css, ['css']);
-	gulp.watch(paths.js, ['js']);
+	gulp.watch(paths.css, ['css-dev']);
+	gulp.watch(paths.js, ['js-dev']);
 	gulp.watch(paths.img, ['img']);
 });
 
 // Default task to be run with `gulp`.
 gulp.task('default', ['watch', 'browser-sync'], function () {
-	gulp.watch('css/*.css', ['css']).on('change', reload);
-	gulp.watch('js/*.js', ['js']).on('change', reload);
+	gulp.watch('js/*.js', ['js-dev']).on('change', reload);
 	gulp.watch('img/*.jpg', ['img']).on('change', reload);
 	gulp.watch('templates/**/*.twig').on('change', reload);
+});
+
+gulp.task('build', ['clean'], function() {
+    runSequence(['js', 'css', 'img']);
 });
