@@ -20,7 +20,7 @@ var del = require('del');
 
 
 var paths = {
-	js: 'src/js/**.*.js',
+	js: 'src/js/**/*.js',
 	img: 'src/img/**/*.{ico, jpg, jpeg, png, svg, gif}',
 	css: 'src/css/**/*.{css,scss,sass}'
 };
@@ -84,34 +84,28 @@ gulp.task('css', function () {
 });
 
 // Build JS-DEV
-gulp.task('js-dev', function () {
-  var b = browserify({
-    debug: true
-  });
-
-  return b.bundle()
-    .pipe(source('./src/main.js'))
-    .pipe(buffer())
-    .pipe(sourcemaps.init({loadMaps: true}))
-        .on('error', gutil.log)
-    .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./js/'));
+gulp.task('js-dev', function() {
+    return browserify('./src/js/main.js')
+        .bundle()
+        .pipe(source('main.js'))
+		.pipe(buffer())
+	    .pipe(sourcemaps.init({loadMaps: true}))
+	        .on('error', gutil.log)
+	    .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('./js/'));
 });
 
 // Build JS
-gulp.task('js', function () {
-  var b = browserify({
-    debug: false
-  });
-
-  return b.bundle()
-    .pipe(source('./src/main.js'))
-    .pipe(buffer())
-    .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(uglify())
-        .on('error', gutil.log)
-    .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./js/'));
+gulp.task('js', function() {
+    return browserify('./src/js/main.js')
+        .bundle()
+        .pipe(source('main.js'))
+		.pipe(buffer())
+	    .pipe(sourcemaps.init({loadMaps: true}))
+			.pipe(uglify())
+	        .on('error', gutil.log)
+	    .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('./js/'));
 });
 
 // Build Img

@@ -1,4 +1,6 @@
 @import "normalize.css";
+@import "vendor/prism.css";
+
 
 @import "base/settings";
 @import "base/fonts";
@@ -7,6 +9,7 @@
 @import "layout/layout";
 
 @import "typography/links";
+@import "typography/headings";
 
 @import "partials/main";
 @import "partials/header";
@@ -19,3 +22,4 @@
 @import "components/article-header";
 @import "components/article-main";
 @import "components/pagination";
+@import "components/comments";

@@ -422,6 +422,171 @@ td,
 th {
   padding: 0;
 }
+/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+git+handlebars+jade+markdown+sass+scss+twig&plugins=show-language */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+div.prism-show-language {
+	position: relative;
+}
+
+div.prism-show-language > div.prism-show-language-label[data-language] {
+	color: black;
+	background-color: #CFCFCF;
+	display: inline-block;
+	position: absolute;
+	bottom: auto;
+	left: auto;
+	top: 0;
+	right: 0;
+	width: auto;
+	height: auto;
+	font-size: 0.9em;
+	border-radius: 0 0 0 5px;
+	padding: 0 0.5em;
+	text-shadow: none;
+	z-index: 1;
+	box-shadow: none;
+	-webkit-transform: none;
+	-ms-transform: none;
+	transform: none;
+}
+
 
 /* Color */
 
@@ -440,6 +605,17 @@ html * {
 			 url('../fonts/freigsanproblk-solofront.woff2') format('woff2'),
 			 url('../fonts/freigsanproblk-solofront.woff') format('woff'),
 			 url('../fonts/freigsanproblk-solofront.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'freightsans_probook';
+	src: url('../fonts/freigsanprobook-solofront.eot');
+	src: url('../fonts/freigsanprobook-solofront.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/freigsanprobook-solofront.woff2') format('woff2'),
+			 url('../fonts/freigsanprobook-solofront.woff') format('woff'),
+			 url('../fonts/freigsanprobook-solofront.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -469,20 +645,12 @@ html * {
 }
 
 html {
-    font-family: 'source_sans_proregular', Arial, sans-serif;
+	font-family: 'source_sans_proregular', Arial, sans-serif;
 }
 
 
-@font-face {
-	font-family: 'freightsans_probook';
-	src: url('../fonts/freigsanprobook-solofront.eot');
-	src: url('../fonts/freigsanprobook-solofront.eot?#iefix') format('embedded-opentype'),
-			 url('../fonts/freigsanprobook-solofront.woff2') format('woff2'),
-			 url('../fonts/freigsanprobook-solofront.woff') format('woff'),
-			 url('../fonts/freigsanprobook-solofront.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
+
+
 
 @font-face {
 	font-family: 'freightsans_prolight';
@@ -604,6 +772,12 @@ html {
 
 a {
 	text-decoration: none;
+}
+h2,
+h3,
+h4,
+h5 {
+	font-family: 'freightsans_probook', Arial, sans-serif;
 }
 
 .main {
@@ -801,7 +975,7 @@ a {
 }
 .article-micro header,
 	.article-micro footer {
-  padding: 24px;
+  padding: 22px 26px 30px;
 }
 .article-micro header {
   padding-bottom: 0;
@@ -875,6 +1049,7 @@ a {
 }
 .article .article-header img {
   width: 100%;
+  display: block;
 }
 .article .article-header .article-header-content {
   position: absolute;
@@ -961,12 +1136,6 @@ a {
   width: calc(100% - 110px);
   margin: 0 auto;
 }
-.article .article-main h2,
-		.article .article-main h3,
-		.article .article-main h4,
-		.article .article-main h5 {
-  font-family: 'source_sans_proregular', Arial, sans-serif;
-}
 .article .article-main p {
   font-family: 'source_sans_proregular', Arial, sans-serif;
   color: #5f6b70;
@@ -1032,5 +1201,20 @@ ul.pagination li a {
   background-color: #59b0ba;
   color: #fff;
 }
+.comments {
+	border-top: 5px solid #f4f4f4;
+}
+.comments .comments-inner {
+  padding: 30px 0;
+  width: calc(100% - 110px);
+  margin: 0 auto
+}
+@media (min-width: 64rem) {
+
+  .comments .comments-inner {
+    width: calc(100% - 110px);
+    max-width: 960px;
+  }
+		}
 
 /*# sourceMappingURL=main.css.map */
