@@ -3,16 +3,21 @@
 	position: relative;
 	height: 100%;
 	background-color: $colorHeaderBg;
-	padding: 40px 50px;
+	padding: 40px 40px;
     display: flex;
     flex-direction: column;
 
 	@media (--viewport-medium) {
-		width: 300px;
+		width: 250px;
 		position: fixed;
 	}
 	@media (--viewport-large) {
-		width: 350px;
+		width: 290px;
+	}
+
+	@media (--viewport-mega) {
+		width: 320px;
+		padding: 40px 50px;
 	}
 }
 

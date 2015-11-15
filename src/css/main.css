@@ -1,15 +1,17 @@
 @import "normalize.css";
-@import "vendor/prism.css";
-
 
 @import "base/settings";
 @import "base/fonts";
 @import "base/icons";
+@import "base/helpers";
 
 @import "layout/layout";
 
 @import "typography/links";
 @import "typography/headings";
+@import "typography/paragraphs";
+
+@import "vendor/prism.css";
 
 @import "partials/main";
 @import "partials/header";

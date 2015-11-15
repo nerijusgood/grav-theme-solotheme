@@ -52,8 +52,8 @@ gulp.task('clean-img', function() {
 gulp.task('css-dev', function () {
     var processors = [
         cssimport,
-        cssnext(),
         csssimplevars,
+        cssnext(),
         cssnested
     ];
     return gulp.src('./src/css/main.css')

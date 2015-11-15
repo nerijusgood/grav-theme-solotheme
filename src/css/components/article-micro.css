@@ -14,6 +14,18 @@
 		}
 	}
 
+	&:hover {
+		.micro-image {
+			opacity: 1;
+			transition: opacity 0.2s ease-in;
+		}
+	}
+
+	.micro-image {
+		opacity: 0.55;
+		transition: opacity 0.2s ease-in;
+	}
+
 	img {
 		width: 100%;
 	}

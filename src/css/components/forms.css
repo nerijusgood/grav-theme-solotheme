@@ -11,6 +11,7 @@
 	input[type="email"],
 	input[type="tel"],
 	input[type="number"],
+	textarea,
 	input[type="submit"],
 	button {
 		line-height: 40px;
@@ -23,10 +24,13 @@
 		-webkit-appearance: none;
 		color: $colorGray;
 		margin-bottom: 10px;
+		transition: background-color 0.1s ease-in;
 
 		&:focus {
 			border: none;
 			outline: none;
+			background-color: color($colorActive a(30%));
+			transition: background-color 0.1s ease-in;
 		}
 	}
 

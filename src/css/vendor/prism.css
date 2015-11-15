@@ -31,13 +31,13 @@ pre[class*="language-"] {
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
 	text-shadow: none;
-	background: #b3d4fc;
+	background: $colorGrayLightest;
 }
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	text-shadow: none;
-	background: #b3d4fc;
+	background: $colorGrayLightest;
 }
 
 @media print {
@@ -50,13 +50,13 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 /* Code blocks */
 pre[class*="language-"] {
 	padding: 1em;
-	margin: .5em 0;
+	margin: 1em 0;
 	overflow: auto;
 }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: #f5f2f0;
+	background: $colorGrayLightest;
 }
 
 /* Inline code */
@@ -142,8 +142,8 @@ div.prism-show-language {
 }
 
 div.prism-show-language > div.prism-show-language-label[data-language] {
-	color: black;
-	background-color: #CFCFCF;
+	color: white;
+	background-color: $colorGrayLight;
 	display: inline-block;
 	position: absolute;
 	bottom: auto;
@@ -152,9 +152,8 @@ div.prism-show-language > div.prism-show-language-label[data-language] {
 	right: 0;
 	width: auto;
 	height: auto;
-	font-size: 0.9em;
-	border-radius: 0 0 0 5px;
-	padding: 0 0.5em;
+	font-size: 0.725em;
+	padding: 0.1em 0.8em;
 	text-shadow: none;
 	z-index: 1;
 	-webkit-box-shadow: none;
@@ -166,4 +165,3 @@ div.prism-show-language > div.prism-show-language-label[data-language] {
 	-o-transform: none;
 	transform: none;
 }
-
