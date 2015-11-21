@@ -69,8 +69,8 @@ gulp.task('css-dev', function () {
 gulp.task('css', function () {
 	var processors = [
 		cssimport,
-		cssnext(),
 		csssimplevars,
+		cssnext(),
 		cssnested,
 		cssnano
 	];
