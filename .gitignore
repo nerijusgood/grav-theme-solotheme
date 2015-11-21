@@ -19,9 +19,4 @@ bower_components
 
 # Project specific #
 ######################
-css
-!src/css
-images
-!src/img
-js
-!src/js
+*.map
