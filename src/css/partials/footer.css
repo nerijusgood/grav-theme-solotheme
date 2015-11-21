@@ -15,6 +15,10 @@
                 font-size: 12px;
                 color: $colorActive;
 
+				@media (--viewport-mega) {
+					font-size: 14px;
+				}
+
                 &:after {
                     content: '\2D';
                     padding-left: 5px;

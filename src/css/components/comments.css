@@ -12,7 +12,14 @@
 		}
 
 
+
 		.form-field {
+			position: relative;
+
+			.form-label {
+				position: absolute;
+			}
+			
 			.form-input-wrapper {
 				width: 70%;
 			}

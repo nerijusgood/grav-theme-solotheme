@@ -952,6 +952,12 @@ div.prism-show-language > div.prism-show-language-label[data-language] {
 .footer p a {
   color: #59b0ba;
 }
+@media (min-width: 75rem) {
+
+  .footer ul li a {
+    font-size: 14px;
+  }
+				}
 
 .nav ul {
   list-style: none;
@@ -1296,6 +1302,12 @@ ul.pagination li a {
   padding: 30px 0;
   width: calc(100% - 110px);
   margin: 0 auto;
+}
+.comments .comments-container .form-field {
+  position: relative;
+}
+.comments .comments-container .form-field .form-label {
+  position: absolute;
 }
 .comments .comments-container .form-field .form-input-wrapper {
   width: 70%;
