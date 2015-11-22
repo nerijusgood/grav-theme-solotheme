@@ -1,4 +1,4 @@
-name: solofront
+name: solotheme
 version: 1.0.0
 description: "Simple, clean, blazing fast **Grav** template."
 icon: empire
@@ -6,8 +6,8 @@ author:
   name: Nerijus Gudas
   email: nerijusgood@gmail.com
   url: http://solofront.com/
-homepage: https://github.com/nerijusgood/solofront-theme
-demo: http://demo.getgrav.org/blog-skeleton
-keywords: solofront, theme, core, modern, fast, responsive, html5, css3, fast
-bugs: https://github.com/nerijusgood/solofront-theme/issues
+homepage: https://github.com/nerijusgood/solotheme
+demo: http://solofront.com/
+keywords: solotheme, theme, core, modern, fast, responsive, html5, css3, fast
+bugs: https://github.com/nerijusgood/solotheme/issues
 license: MIT
