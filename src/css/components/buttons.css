@@ -16,6 +16,10 @@
 	border-radius: 3px;
 	font-weight: bold;
 
+	&:focus {
+		outline: none;
+	}
+
 	&:first-child {
 		margin-left: 0;
 	}

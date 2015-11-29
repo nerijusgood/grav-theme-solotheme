@@ -1,5 +1,6 @@
 .footer {
     margin-top: auto;
+	display: none;
 
     ul {
         padding: 0;
@@ -43,4 +44,8 @@
             color: $colorPrimary;
         }
     }
+
+	@media (--viewport-large) {
+		display: block;
+	}
 }

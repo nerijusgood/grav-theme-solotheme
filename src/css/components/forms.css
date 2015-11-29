@@ -35,6 +35,7 @@
 
 	&.form-search {
 		position: relative;
+		display: none;
 
 		label {
 			display: none;
@@ -57,9 +58,13 @@
 			border-top-left-radius: 0;
 
 			span {
-				color: white;
+				color: $colorWhite;
 				vertical-align: middle;
 			}
+		}
+
+		@media (--viewport-large) {
+			display: block;
 		}
 	}
 }
