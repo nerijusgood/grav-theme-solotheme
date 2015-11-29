@@ -15,7 +15,6 @@ var cssnext = require('postcss-cssnext');
 var cssnested = require('postcss-nested');
 var cssimport = require('postcss-import');
 var csssimplevars = require('postcss-simple-vars');
-// var cssnano = require('cssnano');
 var nano = require('gulp-cssnano');
 var del = require('del');
 
@@ -111,7 +110,7 @@ gulp.task('js', function() {
 
 // Build Img
 gulp.task('img', function() {
-	return gulp.src(paths.img)
+	return gulp.src('src/img/**/*.png')
 		.pipe(plumber())
 		.pipe(imagemin({optimizationLevel: 5}))
 		.pipe(gulp.dest('img'));
