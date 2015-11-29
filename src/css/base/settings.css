@@ -1,10 +1,16 @@
-/* Color */
-$colorActive: #59b0ba;
-$colorActive2: #f57e7d;
+/* Colors */
+$colorGreen: #59b0ba;
+$colorRed: #f26d7d;
 $colorGray: #5f6b70;
 $colorGrayLight: #cdd1d2;
 $colorGrayLightest: #f4f4f4;
+$colorWhite: #ffffff;
 
+
+$colorPrimary: $colorGreen;
+$colorSecondary: $colorRed;
+
+/* Parts */
 $colorBg: $colorGrayLightest;
 $colorHeaderBg: #fff;
 

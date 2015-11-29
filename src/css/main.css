@@ -17,6 +17,8 @@
 @import "partials/header";
 @import "partials/footer";
 
+@import "components/buttons";
+@import "components/tags";
 @import "components/nav";
 @import "components/forms";
 @import "components/article-micro";

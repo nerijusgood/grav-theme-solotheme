@@ -24,7 +24,7 @@
 .logo {
 	a {
 		font-family: $fontBlack;
-		color: $colorActive;
+		color: $colorPrimary;
 		font-size: 60px;
 		line-height: 0.8;
 		text-transform: uppercase;
