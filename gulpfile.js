@@ -15,7 +15,8 @@ var cssnext = require('postcss-cssnext');
 var cssnested = require('postcss-nested');
 var cssimport = require('postcss-import');
 var csssimplevars = require('postcss-simple-vars');
-var cssnano = require('cssnano');
+// var cssnano = require('cssnano');
+var nano = require('gulp-cssnano');
 var del = require('del');
 
 
@@ -71,13 +72,13 @@ gulp.task('css', function () {
 		cssimport,
 		csssimplevars,
 		cssnext(),
-		cssnested,
-		cssnano
+		cssnested
 	];
 	return gulp.src('./src/css/main.css')
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
 			.pipe(postcss(processors))
+			.pipe(nano({discardComments: {removeAll: true}}))
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('./css'))
 		.pipe(reload({stream:true}));
