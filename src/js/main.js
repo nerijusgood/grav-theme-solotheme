@@ -1,8 +1,8 @@
-'use strict'
-var highlight = require('./modules/highligh.js');
-var search = require('./modules/search.js');
+// 'use strict'
+import Search from './modules/search';
+import Prism from './modules/highlight';
 
 (function() {
-	new highlight();
-	new search();
-})();
+	const search = new Search(document.getElementsByClassName('form-search'));
+	const prism = new Prism();
+}());

@@ -21,22 +21,11 @@
 			<title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
 
 			{% block stylesheets %}
-				{# Bootstrap core CSS #}
 				{% do assets.add('theme://css/main.css',101) %}
 
 				{{ assets.css() }}
 			{% endblock %}
 
-			{% block javascripts %}
-				{% do assets.add('theme://js/main.js') %}
-
-				{% if browser.getBrowser == 'msie' and browser.getVersion >= 8 and browser.getVersion <= 9 %}
-					{% do assets.add('https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js') %}
-					{% do assets.add('https://oss.maxcdn.com/respond/1.4.2/respond.min.js') %}
-				{% endif %}
-
-				{{ assets.js() }}
-			{% endblock %}
 		{% endblock head %}
 	</head>
 
@@ -58,6 +47,14 @@
 			{% block content %}{% endblock %}
 		</main>
 	</body>
-	{% block bottom %}{% endblock %}
 	
+	{% block javascripts %}
+		{% do assets.add('theme://js/main.js') %}
+		{% if browser.getBrowser == 'msie' and browser.getVersion >= 8 and browser.getVersion <= 9 %}
+			{% do assets.add('https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js') %}
+			{% do assets.add('https://oss.maxcdn.com/respond/1.4.2/respond.min.js') %}
+		{% endif %}
+	{% endblock %}
+	{{ assets.js() }}
+
 </html>
