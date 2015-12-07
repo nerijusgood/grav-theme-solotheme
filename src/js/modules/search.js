@@ -1,4 +1,5 @@
 // 'use strict'
+import dominus from 'dominus';
 
 export default class search {
 	constructor() {
@@ -9,10 +10,12 @@ export default class search {
 		}
 	}
 
+	// @TODO not working target selector for input! :(
 	searchInput(e) {
 		var target = e.target;
 		if (e.which == 13 && target.value > 3) {
-			console.log(target.value);
+			e.preventDefault;
+			window.location.href = target.data('search-input') + '{{ config.system.param_sep }}' + target.value;
 		}
 	}
 }
