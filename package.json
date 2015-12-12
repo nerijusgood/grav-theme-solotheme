@@ -42,7 +42,8 @@
   },
   "dependencies": {
     "dominus": "^5.0.6",
-    "normalize.css": "^3.0.3"
+    "normalize.css": "^3.0.3",
+    "pjax": "^0.1.4"
   },
   "browser": {
     "prism": "./src/js/vendor/prism.js"
