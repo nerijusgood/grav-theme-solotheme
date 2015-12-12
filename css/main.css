@@ -609,8 +609,7 @@ html {
 	}
 }
 
-.blog,
-.article-page {
+.content-wrapper {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -628,11 +627,16 @@ html {
 
 @media (min-width: 48rem) {
 
-  .blog,
-.article-page {
+  .content-wrapper {
     padding: 20px 0;
   }
 	}
+
+.block-content {
+	width: 100%;
+	background-color: #fff;
+	margin: 0;
+}
 
 a {
 	text-decoration: none;
@@ -1341,11 +1345,6 @@ ul.tags li a {
     margin-left: 10px;
   }
 	}
-.article {
-	width: 100%;
-	background-color: #fff;
-	margin: 0;
-}
 .article .article-header {
   position: relative;
 }

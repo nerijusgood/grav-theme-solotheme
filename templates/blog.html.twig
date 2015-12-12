@@ -17,11 +17,11 @@
 			{% include 'partials/breadcrumbs.html.twig' %}
 		{% endif %} #}
 
-		<div class="container blog">
+		<div class="container content-wrapper blog">
 			{% for child in collection %}
 				{% include 'partials/article_micro.html.twig' with {'blog':page, 'page':child, 'truncate':true} %}
 			{% endfor %}
-			
+
 			{% if config.plugins.pagination.enabled and collection.params.pagination %}
 				{% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
 			{% endif %}

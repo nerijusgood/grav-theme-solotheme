@@ -22,8 +22,7 @@
 	}
 }
 
-.blog,
-.article-page {
+.content-wrapper {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
@@ -32,4 +31,10 @@
 	@media (--viewport-medium) {
 		padding: 20px 0;
 	}
+}
+
+.block-content {
+	width: 100%;
+	background-color: $colorHeaderBg;
+	margin: 0;
 }
