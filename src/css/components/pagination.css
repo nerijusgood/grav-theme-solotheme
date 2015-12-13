@@ -23,7 +23,7 @@ ul.pagination {
 			text-align: center;
 			height: 30px;
 			line-height: 30px;
-			background-color: $colorActive;
+			background-color: $colorPrimary;
 			color: #fff;
 		}
 	}

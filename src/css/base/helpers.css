@@ -1,3 +1,7 @@
+.center-hori {
+	justify-content: center;
+}
+
 .blur {
 	filter: blur(4px);
 }

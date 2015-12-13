@@ -17,7 +17,7 @@
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			background-color: rgba(89, 176, 186, 0.8);
+			background-color: color($colorBlack a(35%));
 			transition: 0.2s opacity ease-in;
 			padding: 0 5%;
 
@@ -29,10 +29,12 @@
 				top: calc(50% - 20px);
 				width: 100%;
 			}
+		}
 
-			&:hover {
-				opacity: 0.3;
-				transition: 0.4s opacity ease-in;
+		&:hover {
+			.article-header-content {
+				background-color: color($colorBlack a(10%));
+				transition: background-color 0.2s ease-in;
 			}
 		}
 
@@ -43,10 +45,10 @@
 			line-height: 1;
 
 			a {
-				font-size: 40px;
+				font-size: 2.5rem;
 				font-family: $fontReg;
-				text-transform: capitalize;
-				color: #fff;
+				font-weight: 800;
+				color: $colorWhite;
 			}
 		}
 
@@ -56,26 +58,7 @@
 			span {
 				font-family: $fontReg;
 				font-size: 16px;
-				color: white;
-			}
-		}
-
-		ul.tags {
-			list-style: none;
-			margin: 10px 0 5px;
-			padding: 0;
-
-			li {
-				display: inline-block;
-
-				a {
-					color: #fff;
-					font-size: 11px;
-					text-transform: uppercase;
-					font-family: $fontBlack;
-					background-color: $colorGrayLight;
-					padding: 5px 8px;
-				}
+				color: $colorWhite;
 			}
 		}
 	}

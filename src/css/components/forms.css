@@ -12,8 +12,7 @@
 	input[type="tel"],
 	input[type="number"],
 	textarea,
-	input[type="submit"],
-	button {
+	input[type="submit"] {
 		line-height: 40px;
 		padding: 0 14px;
 		font-size: 12px;
@@ -29,17 +28,14 @@
 		&:focus {
 			border: none;
 			outline: none;
-			background-color: color($colorActive a(30%));
+			background-color: color($colorPrimary a(30%));
 			transition: background-color 0.1s ease-in;
 		}
 	}
 
-	button {
-		width: auto;
-	}
-
 	&.form-search {
 		position: relative;
+		display: none;
 
 		label {
 			display: none;
@@ -50,19 +46,25 @@
 		}
 
 		button {
-			background-color: $colorGrayLight;
+			/*background-color: $colorGrayLight;*/
 			position: absolute;
 			top: 0;
 			right: 0;
 			line-height: 40px;
-			padding: 0 14px;
+			padding: 0 10px 0 14px;
 			margin: 0;
 			border: 0;
+			border-bottom-left-radius: 0;
+			border-top-left-radius: 0;
 
 			span {
-				color: white;
+				color: $colorWhite;
 				vertical-align: middle;
 			}
+		}
+
+		@media (--viewport-large) {
+			display: block;
 		}
 	}
 }

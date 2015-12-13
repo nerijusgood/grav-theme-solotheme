@@ -17,11 +17,16 @@
 @import "partials/header";
 @import "partials/footer";
 
+@import "components/buttons";
+@import "components/tags";
 @import "components/nav";
 @import "components/forms";
 @import "components/article-micro";
-@import "components/article";
 @import "components/article-header";
 @import "components/article-main";
 @import "components/pagination";
 @import "components/comments";
+@import "components/loader";
+@import "components/page-header";
+
+@import "views/searchresults";

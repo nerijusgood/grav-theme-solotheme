@@ -20,7 +20,7 @@
         "composer/installers": "~1.0"
     },
     "extra": {
-        "installer-name": "antimatter",
+        "installer-name": "solotheme",
         "installer-paths": {
             "user/themes/{$name}/": ["getgrav/grav-theme-antimatter"]
         }

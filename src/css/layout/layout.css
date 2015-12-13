@@ -1,5 +1,5 @@
 .container {
-	width: calc(100% - 28px);
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -22,10 +22,31 @@
 	}
 }
 
-.blog,
-.article-page {
+.content-wrapper {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
-	padding: 20px 0;
+	padding: 10px 0 20px;
+
+	@media (--viewport-medium) {
+		padding: 20px 0;
+	}
+}
+
+.block-content {
+	width: 100%;
+	background-color: $colorHeaderBg;
+	margin: 0;
+}
+
+.container-spacing {
+	padding: 20px;
+
+	@media (--viewport-medium) {
+		padding: 20px 35px;
+	}
+
+	@media (--viewport-large) {
+		padding: 30px 60px;
+	}
 }

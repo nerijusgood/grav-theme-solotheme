@@ -1,32 +1,64 @@
 .header {
+    @extend .container-spacing;
+	padding-top: 0;
+	padding-bottom: 0;
 	width: 100%;
 	position: relative;
-	height: 100%;
-	background-color: $colorHeaderBg;
-	padding: 40px 40px;
     display: flex;
     flex-direction: column;
+	width: 100%;
+	height: 80px;
+	background-color: $colorHeaderBg;
 
-	@media (--viewport-medium) {
-		width: 250px;
-		position: fixed;
-	}
 	@media (--viewport-large) {
 		width: 290px;
+		position: fixed;
+		height: 100vh;
+		padding: 24px;
 	}
 
 	@media (--viewport-mega) {
 		width: 320px;
 		padding: 40px 50px;
 	}
+
+	&.active {
+		position: absolute;
+		height: 100vh;
+		min-height: 100vh;
+		z-index: $ztop;
+		transition: height 0.3s ease-in;
+
+		.nav,
+		.form-search,
+		.footer {
+			display: block;
+		}
+	}
 }
 
 .logo {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
 	a {
 		font-family: $fontBlack;
-		color: $colorActive;
-		font-size: 60px;
-		line-height: 0.8;
+		color: $colorPrimary;
+		font-size: 1.75rem;
+		line-height: 80px;
 		text-transform: uppercase;
+
+		@media (--viewport-large) {
+			font-size: 3.75rem;
+			line-height: 0.8;
+		}
+	}
+
+	.share-menu {
+		@media (--viewport-large) {
+			display: none;
+		}
 	}
 }

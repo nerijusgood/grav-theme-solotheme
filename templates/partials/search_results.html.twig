@@ -1,0 +1,18 @@
+<div class="block-content article">
+
+    <header class="page-header">
+        <h1>Search: {{ query }}</h1>
+    </header>
+
+    <main class="article-main">
+        <div class="center">
+            {% include 'partials/search_input.html.twig' %}
+        </div>
+
+
+        <p>Found {{ search_results.count }} {{ 'result'|pluralize(search_results.count) }}</p>
+        {% for page in search_results %}
+            {% include 'partials/simplesearch_item.html.twig' with {'page':page} %}
+        {% endfor %}
+    </main>
+</div>

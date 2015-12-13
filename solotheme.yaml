@@ -1,4 +1,5 @@
-enabled: true
+enabled: false
+default_lang: en
 dropdown:
   enabled: false
 
@@ -7,4 +8,4 @@ streams:
     theme:
       type: ReadOnlyStream
       paths:
-        - user/themes/solofront-theme
+        - user/themes/solotheme

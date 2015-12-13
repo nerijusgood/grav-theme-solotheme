@@ -1,5 +1,6 @@
 .footer {
     margin-top: auto;
+	display: none;
 
     ul {
         padding: 0;
@@ -13,7 +14,7 @@
 
             a {
                 font-size: 12px;
-                color: $colorActive;
+                color: $colorPrimary;
 
 				@media (--viewport-mega) {
 					font-size: 14px;
@@ -40,7 +41,11 @@
 		margin: 0;
 
         a {
-            color: $colorActive;
+            color: $colorPrimary;
         }
     }
+
+	@media (--viewport-large) {
+		display: block;
+	}
 }

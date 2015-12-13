@@ -10,12 +10,12 @@
 }
 
 @font-face {
-    font-family: 'source_sans_prolight';
-    src: url('../fonts/sourcesanspro-light-solofront.eot');
-    src: url('../fonts/sourcesanspro-light-solofront.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/sourcesanspro-light-solofront.woff2') format('woff2'),
-         url('../fonts/sourcesanspro-light-solofront.woff') format('woff'),
-         url('../fonts/sourcesanspro-light-solofront.ttf') format('truetype');
+    font-family: 'freightsans_probook';
+    src: url('../fonts/freightsans_probook-solofront.eot');
+    src: url('../fonts/freightsans_probook-solofront.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/freightsans_probook-solofront.woff2') format('woff2'),
+         url('../fonts/freightsans_probook-solofront.woff') format('woff'),
+         url('../fonts/freightsans_probook-solofront.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 
@@ -30,12 +30,11 @@
          url('../fonts/sourcesanspro-regular-solofront.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-
 }
 
 $fontBlack: 'freightsans_problack', Arial, sans-serif;
 $fontHead: 'freightsans_probook', Arial, sans-serif;
-$fontReg: 'source_sans_prolight', Arial, sans-serif;
+$fontReg: 'source_sans_proregular', Arial, sans-serif;
 /*$fontLit: 'source_sans_prolight', Arial, sans-serif;*/
 
 html {

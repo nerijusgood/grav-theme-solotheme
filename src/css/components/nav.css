@@ -1,4 +1,6 @@
 .nav {
+	display: none;
+
 	ul {
 		list-style: none;
 		padding: 0;
@@ -16,9 +18,13 @@
             transition: color 0.2s ease-in;
 
 			&:hover {
-                color: $colorActive;
+                color: $colorPrimary;
                 transition: color 0.2s ease-in;
 			}
 		}
+	}
+
+	@media (--viewport-large) {
+		display: block;
 	}
 }

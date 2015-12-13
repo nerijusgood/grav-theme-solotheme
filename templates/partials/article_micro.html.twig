@@ -1,8 +1,8 @@
 <article class="article-micro">
 
     {% set header_image = page.header.header_image|defined(true) %}
-    {% set header_image_width  = page.header.header_image_width|defined(425) %}
-    {% set header_image_height = page.header.header_image_height|defined(320) %}
+    {% set header_image_width  = page.header.header_image_width|defined(475) %}
+    {% set header_image_height = page.header.header_image_height|defined(360) %}
     {% set header_image_file = page.header.header_image_file %}
 
     {% if header_image %}
@@ -37,8 +37,8 @@
             <span>{{ page.date|date("M") }}</span>
         </div>
 
-        <div class="time">
+        <!-- <div class="time">
             5 Min read
-        </div>
+        </div> -->
     </footer>
 </article>
