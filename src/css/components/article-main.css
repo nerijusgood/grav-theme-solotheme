@@ -1,12 +1,10 @@
 .article {
 
 	.article-main {
-		padding: 30px 0;
-		width: calc(100% - 140px);
-		margin: 0 auto;
+		@extend .container-spacing;
+		width: 100%;
 
 		@media (--viewport-large) {
-			width: calc(100% - 140px);
 			max-width: 960px;
 		}
 

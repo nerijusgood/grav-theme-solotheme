@@ -17,6 +17,7 @@ var postcss = require('gulp-postcss');
 var cssnext = require('postcss-cssnext');
 var cssnested = require('postcss-nested');
 var cssimport = require('postcss-import');
+var cssextend = require('postcss-extend');
 var csssimplevars = require('postcss-simple-vars');
 var nano = require('gulp-cssnano');
 var del = require('del');
@@ -32,10 +33,10 @@ var paths = {
 gulp.task('browser-sync', function() {
 	browserSync({
 		files: [
-			"css/main.css",
 			"js/*.js",
 			"img/**/*",
-			"fonts/**/*"
+			"fonts/**/*",
+			"templates/**/*.twig"
 		],
 		proxy: "http://localhost:8888/Personal/solofront/",
 		port: '8000'
@@ -58,19 +59,20 @@ gulp.task('clean-img', function() {
 
 // Build CSS-DEV
 gulp.task('css-dev', function () {
-    var processors = [
-        cssimport,
-        csssimplevars,
-        cssnext(),
-        cssnested
-    ];
-    return gulp.src('./src/css/main.css')
-        .pipe(plumber())
-        .pipe(sourcemaps.init())
-            .pipe(postcss(processors))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('./css'))
-        .pipe(reload({stream:true}));
+	var processors = [
+		cssimport,
+		csssimplevars,
+		cssextend,
+		cssnext(),
+		cssnested
+	];
+	return gulp.src('./src/css/main.css')
+		.pipe(plumber())
+		.pipe(sourcemaps.init())
+			.pipe(postcss(processors))
+		.pipe(sourcemaps.write('.'))
+		.pipe(gulp.dest('./css'))
+		.pipe(reload({stream:true}));
 });
 
 // Build CSS
@@ -78,6 +80,7 @@ gulp.task('css', function () {
 	var processors = [
 		cssimport,
 		csssimplevars,
+		cssextend,
 		cssnext(),
 		cssnested
 	];
@@ -98,21 +101,21 @@ gulp.task('watchify', function () {
   bundle_js(bundler)
 
   bundler.on('update', function () {
-    bundle_js(bundler)
+	bundle_js(bundler)
   })
 })
 
 function bundle_js(bundler) {
   return bundler.bundle()
-    .on('error', gutil.log)
-    .pipe(source('main.js'))
-    .pipe(buffer())
-    .pipe(gulp.dest('js'))
-    .pipe(sourcemaps.init({ loadMaps: true }))
-      // capture sourcemaps from transforms
-      .pipe(uglify())
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('js'))
+	.on('error', gutil.log)
+	.pipe(source('main.js'))
+	.pipe(buffer())
+	.pipe(gulp.dest('js'))
+	.pipe(sourcemaps.init({ loadMaps: true }))
+	  // capture sourcemaps from transforms
+	  .pipe(uglify())
+	.pipe(sourcemaps.write('.'))
+	.pipe(gulp.dest('js'))
 }
 
 // Build JS
@@ -120,11 +123,11 @@ gulp.task('js', function () {
   var bundler = browserify('./src/js/main.js').transform(babelify, {})
 
   return bundler.bundle()
-    .on('error', gutil.log)
-    .pipe(source('main.js'))
-    .pipe(buffer())
-    .pipe(uglify())
-    .pipe(gulp.dest('./js/'))
+	.on('error', gutil.log)
+	.pipe(source('main.js'))
+	.pipe(buffer())
+	.pipe(uglify())
+	.pipe(gulp.dest('./js/'))
 })
 
 // Build Img
@@ -157,5 +160,5 @@ gulp.task('default', function () {
 });
 
 gulp.task('build', ['clean'], function() {
-    runSequence(['js', 'css', 'img']);
+	runSequence(['js', 'css', 'img']);
 });

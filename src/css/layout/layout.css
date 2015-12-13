@@ -38,3 +38,15 @@
 	background-color: $colorHeaderBg;
 	margin: 0;
 }
+
+.container-spacing {
+	padding: 20px;
+
+	@media (--viewport-medium) {
+		padding: 20px 35px;
+	}
+
+	@media (--viewport-large) {
+		padding: 30px 60px;
+	}
+}

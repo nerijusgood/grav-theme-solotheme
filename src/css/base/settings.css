@@ -4,7 +4,8 @@ $colorRed: #f26d7d;
 $colorGray: #5f6b70;
 $colorGrayLight: #cdd1d2;
 $colorGrayLightest: #f4f4f4;
-$colorWhite: #ffffff;
+$colorWhite: #fff;
+$colorBlack: #000;
 
 
 $colorPrimary: $colorGreen;
