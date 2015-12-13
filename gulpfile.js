@@ -121,7 +121,7 @@ gulp.task('js', function () {
 
   return bundler.bundle()
     .on('error', gutil.log)
-    .pipe(source('sg-scripts.js'))
+    .pipe(source('main.js'))
     .pipe(buffer())
     .pipe(uglify())
     .pipe(gulp.dest('./js/'))

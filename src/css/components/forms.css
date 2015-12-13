@@ -46,7 +46,7 @@
 		}
 
 		button {
-			background-color: $colorGrayLight;
+			/*background-color: $colorGrayLight;*/
 			position: absolute;
 			top: 0;
 			right: 0;
