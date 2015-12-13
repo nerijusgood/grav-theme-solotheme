@@ -27,3 +27,4 @@
 @import "components/article-main";
 @import "components/pagination";
 @import "components/comments";
+@import "components/loader";

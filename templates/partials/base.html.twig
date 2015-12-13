@@ -42,12 +42,15 @@
 
 		{# include the header + navigation #}
 		{% include 'partials/header.html.twig' %}
-
-		<main class="main">
-			{% block content %}{% endblock %}
+		<main id="js-wrapper">
+			<div  class="main">
+				{% block content %}{% endblock %}
+			</div>
 		</main>
+
+		<div id="js-loader" class="loader"></div>
 	</body>
-	
+
 	{% block javascripts %}
 		{% do assets.add('theme://js/main.js') %}
 		{% if browser.getBrowser == 'msie' and browser.getVersion >= 8 and browser.getVersion <= 9 %}
