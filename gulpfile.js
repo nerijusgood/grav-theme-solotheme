@@ -25,7 +25,7 @@ var del = require('del');
 
 var paths = {
 	js: 'src/js/**/*.js',
-	img: 'src/img/**/*.{ico, jpg, jpeg, png, svg, gif}',
+	img: 'src/img/**/*',
 	css: 'src/css/**/*.{css,scss,sass}'
 };
 
@@ -132,7 +132,7 @@ gulp.task('js', function () {
 
 // Build Img
 gulp.task('img', function() {
-	return gulp.src('src/img/**/*.png')
+	return gulp.src(paths.img)
 		.pipe(plumber())
 		.pipe(imagemin({optimizationLevel: 5}))
 		.pipe(gulp.dest('img'));

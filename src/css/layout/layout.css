@@ -48,5 +48,6 @@
 
 	@media (--viewport-large) {
 		padding: 30px 60px;
+		margin: 0 auto;
 	}
 }
