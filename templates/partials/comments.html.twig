@@ -1,25 +1,29 @@
 {% if grav.twig.enable %}
     <div class="comments-container">
+
         <h3>{{'PLUGIN_COMMENTS.ADD_COMMENT'|t}}</h3>
 
-        <form class="form-group" name="{{ grav.config.plugins.comments.form.name }}"
-              action="{{ uri.rootUrl ~ (grav.config.plugins.comments.form.action|default(page.route)) }}"
+        <form class="form-field" name="{{ grav.config.plugins.comments.form.name }}"
+              action="{{ grav.config.plugins.comments.form.action ?  base_url ~ grav.config.plugins.comments.form.action : page.url }}"
               method="{{ grav.config.plugins.comments.form.method|upper|default('POST') }}">
+        {% for field in grav.config.plugins.comments.form.fields %}
 
-            {% for field in grav.config.plugins.comments.form.fields %}
-
-                {% set value = form.value(field.name) %}
-                {% if field.evaluateDefault %}
-                    {% set value = evaluate(field.evaluateDefault) %}
-                {% endif %}
+            {% set value = form.value(field.name) %}
+            {% if field.evaluateDefault %}
+                {% set value = evaluate(field.evaluateDefault) %}
+            {% endif %}
+            <div>
                 {% include "forms/fields/#{field.type}/#{field.type}.html.twig" %}
-            {% endfor %}
+            </div>
+        {% endfor %}
 
-            <div class="btn-group">
+            <div class="buttons">
             {% for button in grav.config.plugins.comments.form.buttons %}
-                <button class="btn btn--primary" type="{{ button.type|default('submit') }}">{{ button.value|default('Submit') }}</button>
+                <button class="button" type="{{ button.type|default('submit') }}">{{ button.value|default('Submit') }}</button>
             {% endfor %}
             </div>
+
+            {{ nonce_field('form', 'form-nonce') }}
         </form>
 
         <div class="alert">{{ form.message }}</div>
@@ -32,14 +36,13 @@
                 {% for comment in grav.twig.comments|array_reverse %}
                 <tr>
                     <td>
-                        {{comment.text|e}}
+                        {{comment.text}}
                         <br />
-                        {{'PLUGIN_COMMENTS.WRITTEN_ON'|t}} {{comment.date|e}} {{'PLUGIN_COMMENTS.BY'|t}} {{comment.author|e}}
+                        {{'PLUGIN_COMMENTS.WRITTEN_ON'|t}} {{comment.date|e}} {{'PLUGIN_COMMENTS.BY'|t}} {{comment.author}}
                     </td>
                 </tr>
                 {% endfor %}
             </table>
         {% endif %}
     </div>
-
 {% endif %}

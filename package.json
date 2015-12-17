@@ -43,6 +43,8 @@
   },
   "dependencies": {
     "dominus": "^5.0.6",
+    "fontfaceobserver": "^1.6.1",
+    "lazyload": "^1.8.4",
     "normalize.css": "^3.0.3",
     "pjax": "^0.1.4"
   },
