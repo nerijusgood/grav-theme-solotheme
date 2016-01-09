@@ -1,30 +1,111 @@
 .nav {
-	display: none;
+	position: fixed;
+	z-index: $zmid;
+	width: 100%;
+	height: 100%;
+	background-color: $colorWhite;
+	top: -100%; left: 0; right: 0; bottom: 0;
+	overflow: hidden;
+	transition: all 0.3s ease-in-out;
+	transform: scale(0);
+
+	@media (--viewport-large) {
+		position: static;
+		transform: scale(1);
+		height: auto;
+	}
 
 	ul {
 		list-style: none;
 		padding: 0;
-		margin: 40px 0 30px;
+		margin: 0;
+
+		@media (--viewport-large) {
+			margin: 40px 0 30px;
+		}
 
 		li a {
 			display: block;
-			font-size: 24px;
+			font-size: 36px;
+			text-align: center;
 			font-family: $fontBlack;
 			color: $colorGray;
 			margin: 4px 0;
-            padding: 0;
-            line-height: 1;
+			padding: 12px 0;
+			line-height: 1;
 			text-transform: uppercase;
-            transition: color 0.2s ease-in;
+			transition: color 0.2s ease-in;
 
 			&:hover {
-                color: $colorPrimary;
-                transition: color 0.2s ease-in;
+				color: $colorWhite;
+				background-color: $colorRed;
+				transition: all 0.1s ease-in;
+			}
+
+			@media (--viewport-large) {
+				padding: 0;
+				font-size: 1.5rem;
+				text-align: left;
+
+				&:hover {
+					color: $colorPrimary;
+				}
 			}
 		}
 	}
 
 	@media (--viewport-large) {
 		display: block;
+		position: static;
 	}
+}
+
+/* Burger nav */
+.burger-nav {
+	@extend .flex-column;
+	@extend .flex-center;
+	position: fixed;
+	z-index: $ztop;
+	bottom: 0;
+	right: 0;
+	height: 3rem;
+	width: 3rem;
+	background-color: $colorPrimary;
+	cursor: pointer;
+
+	div {
+		position: relative;
+		width: 30px;
+		height: 4px;
+		border-radius: 2px;
+		background-color: $colorWhite;
+		margin-top: 6px;
+		transition: all 0.3s ease-in-out;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+}
+
+#burger-nav {
+	display: none;
+}
+
+#burger-nav:checked + .burger-nav .top-bun {
+	transform: rotate(-45deg);
+	margin-top: 10px;
+}
+#burger-nav:checked + .burger-nav .bottom-bun {
+	opacity: 0;
+	transform: rotate(45deg);
+}
+#burger-nav:checked + .burger-nav .meat {
+	transform: rotate(45deg);
+	margin-top: -4px;
+}
+
+#burger-nav:checked + .burger-nav + .nav {
+	top: 0;
+	transform: scale(1);
 }
