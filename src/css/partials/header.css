@@ -1,6 +1,8 @@
 .header {
 	@extend .container-spacing;
-	@extend .flex-column;
+	@extend .flex-row;
+	justify-content: space-between;
+	align-items: center;
 	padding-top: 0;
 	padding-bottom: 0;
 	width: 100%;
@@ -8,6 +10,8 @@
 	background-color: $colorHeaderBg;
 
 	@media (--viewport-large) {
+		flex-direction: column;
+		align-items: stretch;
 		width: 290px;
 		position: fixed;
 		height: 100vh;
@@ -38,6 +42,7 @@
 	@extend .flex-row;
 	justify-content: space-between;
 	align-items: center;
+	/*z-index: $ztop;*/
 
 	a {
 		font-family: $fontBlack;
