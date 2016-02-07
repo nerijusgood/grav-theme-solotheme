@@ -1,8 +1,11 @@
 .main {
 	padding-left: 0;
 	width: 100%;
-    min-height: 100vh;
+	min-height: 100vh;
 	background-color: $colorBg;
+	/* Margin collapse fix */
+	padding-bottom: 1px;
+	margin-bottom: -1px;
 
 	/*@media (--viewport-medium) {
 		padding-left: 250px;
