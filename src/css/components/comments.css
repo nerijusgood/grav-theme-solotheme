@@ -1,27 +1,106 @@
+/* Common classes */
 .comments {
-    border-top: 5px solid $colorGrayLightest;
+}
+.comments--container {
+  @extend .container-spacing;
+  border-top: 10px solid $colorGrayLightest;
 
-	h3 {
-		margin-top: 0;
-	}
+  @media (--viewport-large) {
+    max-width: 960px;
+  }
 
-    .comments-container {
-        @extend .container-spacing;
+  &:last-child {
+    margin-bottom: 20px;
+  }
+}
 
-        @media (--viewport-large) {
-            max-width: 960px;
-        }
+/* Comments Form */
+.comments--form {
+  .form-field {
+    position: relative;
+  }
 
-        .form-field {
-            position: relative;
+  .form-label {
+    display: none;
+  }
 
-            .form-label {
-                display: none;
-            }
+  .form-input-wrapper {
+    width: 70%;
+  }
 
-            .form-input-wrapper {
-                width: 70%;
-            }
-        }
+  .g-recaptcha {
+    margin-bottom: 10px;
+  }
+
+  .alert {
+    margin: 10px 0;
+  }
+}
+
+/* Comments Overview */
+.comments--overview {
+  counter-reset: section;
+  list-style: none;
+  padding: 0;
+
+  li {
+    position: relative;
+    counter-increment: section;
+    margin-bottom: 1rem;
+  }
+
+  li:last-child {
+    margin-bottom: 0;
+  }
+
+  li:hover {
+    &:after {
+      transform: translateY(-10px);
     }
+  }
+
+  li:after {
+    position: absolute;
+    content: "#" counter(section);
+    top: 0;
+    right: 0;
+    font-size: 3.25em;
+    font-family: $fontBlack;
+    color: $colorPrimary;
+    opacity: .4;
+    will-change: transform;
+    transform: translateY(0);
+    transition: transform .2s ease-in;
+  }
+}
+
+/* Comments Author */
+.comments--author {
+  h3 {
+    margin-bottom: 0;
+    display: inline-block;
+    margin: 0 1rem 0 0;
+  }
+}
+
+/* Comments Content */
+.comments--comment {
+  position: relative;
+  margin: 10px 0;
+  padding: 0 1.5rem 0 1rem;
+  background: $colorWhite;
+  border: 1px solid $colorGrayLight;
+  z-index: $zmin;
+
+  p {
+    margin: 0;
+  }
+
+  p:first-child {
+    padding-top: 1.5rem;
+  }
+
+  p:last-child {
+    padding-bottom: 1.5rem;
+  }
 }
