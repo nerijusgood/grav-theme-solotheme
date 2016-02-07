@@ -25,6 +25,7 @@
 @import "components/article-header";
 @import "components/article-main";
 @import "components/pagination";
+@import "components/alert";
 @import "components/comments";
 @import "components/loader";
 @import "components/page-header";
