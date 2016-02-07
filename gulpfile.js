@@ -145,7 +145,6 @@ gulp.task('watch', function() {
 
 // Default task to be run with `gulp`.
 gulp.task('default', function () {
-
 	runSequence(
 		[
 			'css-dev',

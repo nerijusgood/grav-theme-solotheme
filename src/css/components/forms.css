@@ -1,70 +1,70 @@
 .form-group {
-	border: none;
-	padding: 0;
-	margin: 0;
-	display: flex;
-	flex-direction: column;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 
-	input[type="text"],
-	input[type="search"],
-	input[type="password"],
-	input[type="email"],
-	input[type="tel"],
-	input[type="number"],
-	textarea,
-	input[type="submit"] {
-		line-height: 40px;
-		padding: 0 14px;
-		font-size: 12px;
-		width: 100%;
-		box-sizing: border-box;
-		border: none;
-		background-color: $colorGrayLightest;
-		-webkit-appearance: none;
-		color: $colorGray;
-		margin-bottom: 10px;
-		transition: background-color 0.1s ease-in;
+  input[type="text"],
+  input[type="search"],
+  input[type="password"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  textarea,
+  input[type="submit"] {
+    line-height: 40px;
+    padding: 0 14px;
+    font-size: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    background-color: $colorGrayLightest;
+    -webkit-appearance: none;
+    color: $colorGray;
+    margin-bottom: 10px;
+    transition: background-color 0.1s ease-in;
 
-		&:focus {
-			border: none;
-			outline: none;
-			background-color: color($colorPrimary a(30%));
-			transition: background-color 0.1s ease-in;
-		}
-	}
+    &:focus {
+      border: none;
+      outline: none;
+      background-color: color($colorPrimary a(30%));
+      transition: background-color 0.1s ease-in;
+    }
+  }
 
-	&.form-search {
-		position: relative;
-		display: none;
+  &.form-search {
+    position: relative;
+    display: none;
 
-		label {
-			display: none;
-		}
+    label {
+      display: none;
+    }
 
-		input[type="search"] {
-			padding-right: 45px;
-		}
+    input[type="search"] {
+      padding-right: 45px;
+    }
 
-		button {
-			/*background-color: $colorGrayLight;*/
-			position: absolute;
-			top: 0;
-			right: 0;
-			line-height: 40px;
-			padding: 0 10px 0 14px;
-			margin: 0;
-			border: 0;
-			border-bottom-left-radius: 0;
-			border-top-left-radius: 0;
+    button {
+      /*background-color: $colorGrayLight;*/
+      position: absolute;
+      top: 0;
+      right: 0;
+      line-height: 40px;
+      padding: 0 10px 0 14px;
+      margin: 0;
+      border: 0;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
 
-			span {
-				color: $colorWhite;
-				vertical-align: middle;
-			}
-		}
+      span {
+        color: $colorWhite;
+        vertical-align: middle;
+      }
+    }
 
-		@media (--viewport-large) {
-			display: block;
-		}
-	}
+    @media (--viewport-large) {
+      display: block;
+    }
+  }
 }

@@ -7,14 +7,13 @@ $colorGrayLightest: #f4f4f4;
 $colorWhite: #fff;
 $colorBlack: #000;
 
-
+/* Color uses */
 $colorPrimary: $colorGreen;
 $colorSecondary: $colorRed;
 
 /* Parts */
 $colorBg: $colorGrayLightest;
 $colorHeaderBg: #fff;
-
 
 /* Sizes */
 $baseSize: 1rem;
@@ -31,5 +30,5 @@ $zmin: 3;
 @custom-media --viewport-huge (min-width: 80rem);		/* 1200 */
 
 html * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
