@@ -1,4 +1,6 @@
-.nav {
+/* Nav
+-------------------------------------------------------------------------------- */
+.Nav {
 	@extend .flex-row;
 	@extend .flex-center;
 	position: fixed;
@@ -7,7 +9,10 @@
 	height: 100%;
 	will-change: transform;
 	background-color: $colorWhite;
-	top: -100%; left: 0; right: 0; bottom: 0;
+	top: -100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
 	overflow: hidden;
 	transition: transform 0.3s, top 0.3s ease-in-out;
 	transform: scale(0.8);
