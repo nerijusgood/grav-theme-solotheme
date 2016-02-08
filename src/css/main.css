@@ -1,33 +1,48 @@
 @import "normalize.css";
 
+/* Settings
+-------------------------------------------------------------------------------- */
 @import "base/settings";
 @import "base/fonts";
 @import "base/icons";
 @import "base/helpers";
 
+/* Vendor
+-------------------------------------------------------------------------------- */
+@import "vendor/prism.css";
+
+/* Layout / Grid
+-------------------------------------------------------------------------------- */
 @import "layout/layout";
 
+/* Typography
+-------------------------------------------------------------------------------- */
 @import "typography/links";
 @import "typography/headings";
 @import "typography/paragraphs";
 
-@import "vendor/prism.css";
+/* Components
+-------------------------------------------------------------------------------- */
+@import "components/Button";
+@import "components/List";
+@import "components/Tags";
+@import "components/Nav";
+@import "components/Forms";
+@import "components/article-micro";
+@import "components/article-header";
+@import "components/article-main";
+@import "components/Pagination";
+@import "components/Alert";
+@import "components/comments";
+@import "components/Loader";
+@import "components/page-header";
 
+/* Partials
+-------------------------------------------------------------------------------- */
 @import "partials/main";
 @import "partials/header";
 @import "partials/footer";
 
-@import "components/buttons";
-@import "components/tags";
-@import "components/nav";
-@import "components/forms";
-@import "components/article-micro";
-@import "components/article-header";
-@import "components/article-main";
-@import "components/pagination";
-@import "components/alert";
-@import "components/comments";
-@import "components/loader";
-@import "components/page-header";
-
-@import "views/searchresults";
+/* Views
+-------------------------------------------------------------------------------- */
+/*@import "views/searchresults";*/

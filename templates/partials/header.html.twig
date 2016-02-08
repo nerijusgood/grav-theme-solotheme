@@ -4,14 +4,14 @@
 		<!-- <a class="icon-share share-menu" alt="share" href="#"></a> -->
 	</div>
 
-	<input id="burger-nav" type="checkbox"></input>
-	<label for="burger-nav" class="burger-nav" alt="Open Menu">
+	<input id="Nav-burger" type="checkbox"></input>
+	<label for="Nav-burger" class="Nav-burger" alt="Open Menu">
 		<div class="top-bun"></div>
 		<div class="meat"></div>
 		<div class="bottom-bun"></div>
 	</label>
 
-	<nav class="nav" role="navigation">
+	<nav class="Nav" role="navigation">
 		{% include 'partials/taxonomylist.html.twig' with {'base_url':new_base_url, 'taxonomy':'tag'} %}
 	</nav>
 	{% include 'partials/search_input.html.twig' %}

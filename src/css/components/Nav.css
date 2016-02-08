@@ -1,0 +1,128 @@
+/* Nav
+-------------------------------------------------------------------------------- */
+.Nav {
+  @extend .flex-row;
+  @extend .flex-center;
+  position: fixed;
+  z-index: $zmid;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+  background-color: $colorWhite;
+  top: -100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  transition: transform 0.3s, top 0.3s ease-in-out;
+  transform: scale(0.8);
+
+  @media (--viewport-large) {
+    position: static;
+    transform: scale(1);
+    height: auto;
+    display: block;
+  }
+}
+
+.Nav-List {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @media (--viewport-large) {
+    position: static;
+    display: block;
+    margin: 40px 0 30px;
+  }
+
+  li a {
+    display: block;
+    font-size: 36px;
+    text-align: center;
+    font-family: $fontBlack;
+    color: $colorGray;
+    margin: 4px 0;
+    padding: 12px 0;
+    line-height: 1;
+    text-transform: uppercase;
+    transition: color 0.2s ease-in;
+
+    @media (--viewport-large) {
+      padding: 0;
+      font-size: 1.5rem;
+      text-align: left;
+    }
+
+    &:hover {
+      color: $colorWhite;
+      background-color: $colorRed;
+      transition: all 0.1s ease-in;
+
+      @media (--viewport-large) {
+        color: $colorPrimary;
+        background-color: $colorWhite;
+      }
+    }
+  }
+}
+
+/* Burger nav */
+.Nav-burger {
+  @extend .flex-column;
+  @extend .flex-center;
+  /*position: fixed;*/
+  z-index: $ztop;
+  top: 16px;
+  right: 20px;
+  height: 3rem;
+  width: 3rem;
+  background-color: $colorWhite;
+  cursor: pointer;
+
+  @media (--viewport-large) {
+    display: none;
+  }
+
+  div {
+    position: relative;
+    will-change: transform, opacity, margin;
+    width: 30px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: $colorPrimary;
+    margin-top: 6px;
+    opacity: 1;
+    transition: opacity 0.3s, transform 0.3s, margin 0.3s ease-in-out;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+#Nav-burger {
+  display: none;
+}
+
+#Nav-burger:checked + .Nav-burger {
+  position: fixed;
+}
+
+#Nav-burger:checked + .Nav-burger .top-bun {
+  transform: rotate(-45deg);
+  margin-top: 10px;
+}
+#Nav-burger:checked + .Nav-burger .bottom-bun {
+  opacity: 0;
+  transform: rotate(45deg);
+}
+#Nav-burger:checked + .Nav-burger .meat {
+  transform: rotate(45deg);
+  margin-top: -4px;
+}
+
+#Nav-burger:checked + .Nav-burger + .Nav {
+  top: 0;
+  transform: scale(1);
+}

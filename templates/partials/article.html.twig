@@ -22,7 +22,7 @@
             {% if page.taxonomy.tag %}
                 <ul class="tags">
                     {% for tag in page.taxonomy.tag %}
-                    <li><a class="btn btn--outline" href="{{ blog.url }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a></li>
+                    <li><a class="Button Button--outline" href="{{ blog.url }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a></li>
                     {% endfor %}
                 </ul>
             {% endif %}
@@ -40,17 +40,17 @@
 
     <main class="article-main">
         {% if page.header.metadata.demo or page.header.metadata.download or page.header.metadata.github %}
-            <div class="btn-group center-hori article-shortcuts">
+            <div class="Button-group center-hori article-shortcuts">
                 {% if page.header.metadata.demo %}
-                    <a class="btn btn--secondary" href="{{ page.header.metadata.demo }}">Demo</a>
+                    <a class="Button Button--secondary" href="{{ page.header.metadata.demo }}">Demo</a>
                 {% endif %}
 
                 {% if page.header.metadata.download %}
-                    <a class="btn btn--secondary btn--icon icon-github" href="{{ page.header.metadata.download }}">Download</a>
+                    <a class="Button Button--secondary Button--icon icon-github" href="{{ page.header.metadata.download }}">Download</a>
                 {% endif %}
 
                 {% if page.header.metadata.github %}
-                    <a class="btn btn--secondary btn--icon icon-github" href="{{ page.header.metadata.github }}">GitHub</a>
+                    <a class="Button Button--secondary Button--icon icon-github" href="{{ page.header.metadata.github }}">GitHub</a>
                 {% endif %}
             </div>
         {% endif %}
