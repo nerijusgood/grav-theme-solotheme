@@ -4,8 +4,8 @@
   "description": "Simple, clean and blazing fast developers theme for GRAV cms.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp"
+    "start": "gulp",
+    "lint:styles": "stylelint src/css/**/*.css"
   },
   "keywords": [
     "grav",
@@ -36,6 +36,8 @@
     "postcss-nested": "^1.0.0",
     "postcss-simple-vars": "^1.1.0",
     "run-sequence": "^1.1.4",
+    "stylelint": "^4.2.0",
+    "stylelint-config-suitcss": "^3.0.0",
     "utils-merge": "^1.0.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",

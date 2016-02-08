@@ -1,7 +1,7 @@
 {% set taxlist = taxonomylist.get() %}
 
 {% if taxlist %}
-	<ul>
+	<ul class="Nav-List">
 		{% for tax,value in taxlist[taxonomy] %}
 			{% set active = uri.param(taxonomy) == tax ? 'active' : '' %}
 			<li><a class="{{ active }}" href="{{ base_url }}/{{ taxonomy }}{{ config.system.param_sep }}{{ tax|e('url') }}">{{ tax }}</a></li>

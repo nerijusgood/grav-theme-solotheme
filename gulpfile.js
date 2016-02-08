@@ -86,10 +86,8 @@ gulp.task('css', function () {
 	];
 	return gulp.src('./src/css/main.css')
 		.pipe(plumber())
-		.pipe(sourcemaps.init())
-			.pipe(postcss(processors))
-			.pipe(nano({discardComments: {removeAll: true}}))
-		.pipe(sourcemaps.write('.'))
+		.pipe(postcss(processors))
+		.pipe(nano({discardComments: {removeAll: true}}))
 		.pipe(gulp.dest('./css'))
 		.pipe(reload({stream:true}));
 });
@@ -147,7 +145,6 @@ gulp.task('watch', function() {
 
 // Default task to be run with `gulp`.
 gulp.task('default', function () {
-
 	runSequence(
 		[
 			'css-dev',
