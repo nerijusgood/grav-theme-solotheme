@@ -1,11 +1,9 @@
 {
   "extends": "stylelint-config-suitcss",
   "rules": {
-    "at-rule-empty-line-before": 0,
-    "comment-empty-line-before": 0,
-    "function-url-quotes": "single"
-    "number-leading-zero": 0,
-    "rule-non-nested-empty-line-before": 0,
+    "function-url-quotes": "single",
+    "max-line-length": 120,
+    "rule-non-nested-empty-line-before": "always",
     "rule-properties-order": 0,
     "string-quotes": "single"
   }

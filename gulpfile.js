@@ -24,72 +24,72 @@ var del = require('del');
 
 
 var paths = {
-	js: 'src/js/**/*.js',
-	img: 'src/img/**/*',
-	css: 'src/css/**/*.{css,scss,sass}'
+  js: 'src/js/**/*.js',
+  img: 'src/img/**/*',
+  css: 'src/css/**/*.{css,scss,sass}'
 };
 
 // Browser-sync task, only cares about compiled CSS
 gulp.task('browser-sync', function() {
-	browserSync({
-		files: [
-			"js/*.js",
-			"img/**/*",
-			"fonts/**/*",
-			"templates/**/*.twig"
-		],
-		proxy: "http://localhost:8888/Personal/solofront/",
-		port: '8000'
-	});
+  browserSync({
+    files: [
+      "js/*.js",
+      "img/**/*",
+      "fonts/**/*",
+      "templates/**/*.twig"
+    ],
+    proxy: "http://localhost:8888/Personal/solofront/",
+    port: '8000'
+  });
 });
 
 // Clean tasks
 gulp.task('clean', ['clean-css', 'clean-js', 'clean-img'], function() {
-	return del(['css', 'js', 'img']);
+  return del(['css', 'js', 'img']);
 });
 gulp.task('clean-css', function() {
-	return del(['css']);
+  return del(['css']);
 });
 gulp.task('clean-js', function() {
-	return del(['js']);
+  return del(['js']);
 });
 gulp.task('clean-img', function() {
-	return del(['img']);
+  return del(['img']);
 });
 
 // Build CSS-DEV
 gulp.task('css-dev', function () {
-	var processors = [
-		cssimport,
-		csssimplevars,
-		cssextend,
-		cssnext(),
-		cssnested
-	];
-	return gulp.src('./src/css/main.css')
-		.pipe(plumber())
-		.pipe(sourcemaps.init())
-			.pipe(postcss(processors))
-		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest('./css'))
-		.pipe(reload({stream:true}));
+  var processors = [
+    cssimport,
+    csssimplevars,
+    cssextend,
+    cssnext(),
+    cssnested
+  ];
+  return gulp.src('./src/css/main.css')
+    .pipe(plumber())
+    .pipe(sourcemaps.init())
+      .pipe(postcss(processors))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('./css'))
+    .pipe(reload({stream:true}));
 });
 
 // Build CSS
 gulp.task('css', function () {
-	var processors = [
-		cssimport,
-		csssimplevars,
-		cssextend,
-		cssnext(),
-		cssnested
-	];
-	return gulp.src('./src/css/main.css')
-		.pipe(plumber())
-		.pipe(postcss(processors))
-		.pipe(nano({discardComments: {removeAll: true}}))
-		.pipe(gulp.dest('./css'))
-		.pipe(reload({stream:true}));
+  var processors = [
+    cssimport,
+    csssimplevars,
+    cssextend,
+    cssnext(),
+    cssnested
+  ];
+  return gulp.src('./src/css/main.css')
+    .pipe(plumber())
+    .pipe(postcss(processors))
+    .pipe(nano({discardComments: {removeAll: true}}))
+    .pipe(gulp.dest('./css'))
+    .pipe(reload({stream:true}));
 });
 
 // Build JS-DEV
@@ -99,21 +99,21 @@ gulp.task('watchify', function () {
   bundle_js(bundler)
 
   bundler.on('update', function () {
-	bundle_js(bundler)
+  bundle_js(bundler)
   })
 })
 
 function bundle_js(bundler) {
   return bundler.bundle()
-	.on('error', gutil.log)
-	.pipe(source('main.js'))
-	.pipe(buffer())
-	.pipe(gulp.dest('js'))
-	.pipe(sourcemaps.init({ loadMaps: true }))
-	  // capture sourcemaps from transforms
-	  .pipe(uglify())
-	.pipe(sourcemaps.write('.'))
-	.pipe(gulp.dest('js'))
+  .on('error', gutil.log)
+  .pipe(source('main.js'))
+  .pipe(buffer())
+  .pipe(gulp.dest('js'))
+  .pipe(sourcemaps.init({ loadMaps: true }))
+    // capture sourcemaps from transforms
+    .pipe(uglify())
+  .pipe(sourcemaps.write('.'))
+  .pipe(gulp.dest('js'))
 }
 
 // Build JS
@@ -121,41 +121,41 @@ gulp.task('js', function () {
   var bundler = browserify('./src/js/main.js').transform(babelify, {})
 
   return bundler.bundle()
-	.on('error', gutil.log)
-	.pipe(source('main.js'))
-	.pipe(buffer())
-	.pipe(uglify())
-	.pipe(gulp.dest('./js/'))
+  .on('error', gutil.log)
+  .pipe(source('main.js'))
+  .pipe(buffer())
+  .pipe(uglify())
+  .pipe(gulp.dest('./js/'))
 })
 
 // Build Img
 gulp.task('img', function() {
-	return gulp.src(paths.img)
-		.pipe(plumber())
-		.pipe(imagemin({optimizationLevel: 5}))
-		.pipe(gulp.dest('img'));
+  return gulp.src(paths.img)
+    .pipe(plumber())
+    .pipe(imagemin({optimizationLevel: 5}))
+    .pipe(gulp.dest('img'));
 });
 
 // Rerun the task when a file changes
-gulp.task('watch', function() {
-	gulp.watch(paths.css, ['css-dev']);
-	gulp.watch(paths.img, ['img']);
-	// gulp.watch(paths.js, ['js-dev']);
+gulp.task('watch', function () {
+  gulp.watch(paths.css, ['css-dev']);
+  gulp.watch(paths.img, ['img']);
+  // gulp.watch(paths.js, ['js-dev']);
 });
 
 // Default task to be run with `gulp`.
 gulp.task('default', function () {
-	runSequence(
-		[
-			'css-dev',
-			'watchify',
-			'img'
-		],
-		'watch',
-		'browser-sync'
-	)
+  runSequence(
+    [
+      'css-dev',
+      'watchify',
+      'img'
+    ],
+    'watch',
+    'browser-sync'
+  )
 });
 
 gulp.task('build', ['clean'], function() {
-	runSequence(['js', 'css', 'img']);
+  runSequence(['js', 'css', 'img']);
 });
