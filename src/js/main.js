@@ -6,11 +6,10 @@ import Prism from './modules/highlight';
 // import Pjax from 'pjax';
 // import Pjax from './modules/pjax';
 
-(function() {
-	new Search(document.getElementsByClassName('form-search'));
-	new Prism();
+(function () {
+  new Search(document.getElementsByClassName('Js-search'));
+  new Prism();
 }());
-
 
 // Pjax
 // (function (document, window) {
