@@ -1,24 +1,24 @@
 .article {
 
-	.article-main {
-		@extend .container-spacing;
-		width: 100%;
+  .article-main {
+    @extend .container-spacing;
+    width: 100%;
 
-		@media (--viewport-large) {
-			max-width: 960px;
-		}
+    @media (--viewport-large) {
+      max-width: 960px;
+    }
 
-		.article-shortcuts {
-			margin-bottom: 30px;
-		}
+    .article-shortcuts {
+      margin-bottom: 30px;
+    }
 
-		p {
-			color: $colorGray;
-		}
+    p {
+      color: $colorGray;
+    }
 
-		p img {
-			max-width: 100%;
-			display: block;
-		}
-	}
+    p img {
+      max-width: 100%;
+      display: block;
+    }
+  }
 }

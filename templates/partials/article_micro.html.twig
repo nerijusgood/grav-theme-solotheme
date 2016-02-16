@@ -18,7 +18,7 @@
 
     <header>
         {% if page.taxonomy.tag %}
-            <ul class="tags">
+            <ul class="Tags">
                 {% for tag in page.taxonomy.tag %}
                     <li>
                         <a href="{{ blog.url }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>

@@ -7,7 +7,7 @@
 
     <h2>{{'PLUGIN_COMMENTS.ADD_COMMENT'|t}}</h2>
 
-    <form class="form-field form-group" name="{{ grav.config.plugins.comments.form.name }}"
+    <form class="form-field Form" name="{{ grav.config.plugins.comments.form.name }}"
       action="{{ grav.config.plugins.comments.form.action ?  base_url ~ grav.config.plugins.comments.form.action : page.url }}"
       method="{{ grav.config.plugins.comments.form.method|upper|default('POST') }}">
     {% for field in grav.config.plugins.comments.form.fields %}
