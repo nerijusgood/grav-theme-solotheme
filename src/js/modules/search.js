@@ -20,18 +20,22 @@ export default class search {
     }
   }
 
+  // on 'enter' and if value more than > 1 search
   handleInput (e) {
     const target = e.target;
-    if (e.which === 13 && target.value.length > 1) {
-      const query = target.value;
+    const query = target.value;
+    if (e.which === 13 && query.length > 1) {
       e.preventDefault;
       window.location.href = target.getAttribute('data-search-input') + ':' + query;
     }
   }
 
-  // TODO: Submit search finish
+  // butotn click value more than > 1 search
   handleSubmit (e) {
     const target = e.target;
-    console.log(target);
+    const query = target.previousElementSibling.value;
+    if (query.length > 1) {
+      window.location.href = target.previousElementSibling.getAttribute('data-search-input') + ':' + query;
+    }
   }
 }
