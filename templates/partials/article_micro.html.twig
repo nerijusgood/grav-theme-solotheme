@@ -1,4 +1,4 @@
-<article class="Article--micro">
+<article class="Card">
 
   {% set header_image = page.header.header_image|defined(true) %}
   {% set header_image_width  = page.header.header_image_width|defined(475) %}
@@ -6,7 +6,7 @@
   {% set header_image_file = page.header.header_image_file %}
 
   {% if header_image %}
-    <a class="Article-image" href="{{ page.url }}">
+    <a class="Card-image" href="{{ page.url }}">
       {% if header_image_file %}
         {% set header_image_media = page.media.images[header_image_file] %}
       {% else %}
@@ -16,7 +16,7 @@
     </a>
   {% endif %}
 
-  <header class="Article-header">
+  <header class="Card-header">
     {% if page.taxonomy.tag %}
       <ul class="Tag-group">
         {% for tag in page.taxonomy.tag %}
@@ -30,7 +30,7 @@
     <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
   </header>
 
-  <footer class="Article-footer">
+  <footer class="Card-footer">
     <div class="date">
       <span>{{ page.date|date("d") }}</span>
       <span>{{ page.date|date("M") }}</span>

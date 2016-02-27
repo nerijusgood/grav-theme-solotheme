@@ -1,11 +1,11 @@
-<article class="block-content article">
+<article class="block-content Article">
 
   {% set header_image = page.header.header_image|defined(true) %}
   {% set header_image_width  = page.header.header_image_width|defined(900) %}
   {% set header_image_height = page.header.header_image_height|defined(300) %}
   {% set header_image_file = page.header.header_image_file %}
 
-  <header class="article-header">
+  <header class="Article-header">
     {% if header_image %}
       {% if header_image_file %}
         {% set header_image_media = page.media.images[header_image_file] %}
@@ -15,7 +15,7 @@
       {{ header_image_media.cropZoom(header_image_width, header_image_height).html }}
     {% endif %}
 
-    <div class="article-header-content">
+    <div class="Article-hcontent">
       {% if page.taxonomy.tag %}
         <ul class="Tag-group">
           {% for tag in page.taxonomy.tag %}
@@ -24,9 +24,9 @@
         </ul>
       {% endif %}
 
-      <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+      <h1 class="Article-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
 
-      <div class="header-date">
+      <div class="Article-byline">
         <span>{{ page.date|date("d") }}</span>
         <span>{{ page.date|date("M") }}</span>
         <span>{{ page.date|date("Y") }}</span>
@@ -34,9 +34,9 @@
     </div>
   </header>
 
-  <main class="article-main">
+  <main class="Article-body">
       {% if page.header.metadata.demo or page.header.metadata.download or page.header.metadata.github %}
-          <div class="Button-group center-hori article-shortcuts">
+          <div class="Button-group center-hori">
               {% if page.header.metadata.demo %}
                   <a class="Button Button--secondary" href="{{ page.header.metadata.demo }}">Demo</a>
               {% endif %}
@@ -54,7 +54,7 @@
       {{ page.content }}
   </main>
 
-  <footer class="article-footer">
+  <footer class="Article-footer">
       {% if show_prev_next %}
           <p class="prev-next">
               {% if not page.isFirst %}
