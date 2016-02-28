@@ -28,9 +28,8 @@
 @import "components/Tags";
 @import "components/Nav";
 @import "components/Forms";
-@import "components/article-micro";
-@import "components/article-header";
-@import "components/article-main";
+@import "components/Card";
+@import "components/Article";
 @import "components/Pagination";
 @import "components/Alert";
 @import "components/comments";
