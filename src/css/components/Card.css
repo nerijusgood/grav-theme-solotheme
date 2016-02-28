@@ -1,24 +1,13 @@
 /* Card
 -------------------------------------------------------------------------------- */
 .Card {
-  width: 100%;
+  /*width: 100%;*/
   background-color: $colorHeaderBg;
-  margin: 10px 0;
+  /*margin: 10px 0;*/
   border-top: 5px solid $colorPrimary;
-
-  @media (--viewport-medium) {
-    width: calc(50% - 10px);
-    margin-right: 10px;
-  }
-
-  @media (--viewport-huge) {
-    width: calc(100% / 3 - 18px);
-    margin-right: 25px;
-    margin-left: 0;
-  }
 }
 
-.Card:nth-child(even) {
+/*.Card:nth-child(even) {
   margin-right: 0;
   margin-left: 10px;
 
@@ -34,7 +23,7 @@
     margin-right: 0;
     margin-left: 0;
   }
-}
+}*/
 
 /*.Card:hover {
   .micro-image:after {
@@ -42,6 +31,38 @@
     background-color: color($colorBlack a(5%));
   }
 }*/
+
+.Card--overview {
+  width: 320px;
+
+  @media (--viewport-small) {
+    width: 420px;
+  }
+
+  @media (--viewport-landscapeMin) {
+    width: 268px;
+  }
+
+  @media (--viewport-landscapeMax) {
+    width: 310px;
+  }
+
+  @media (--viewport-medium) {
+    width: 350px;
+  }
+
+  @media (--viewport-large) {
+    width: 325.5px;
+  }
+
+  @media (--viewport-huge) {
+    width: 285px;
+  }
+
+  @media (--viewport-monitor) {
+    width: 312px;
+  }
+}
 
 /* Card-image
 -------------------------------------------------------------------------------- */

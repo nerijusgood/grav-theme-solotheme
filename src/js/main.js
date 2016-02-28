@@ -1,6 +1,7 @@
 'use strict';
 import Search from './modules/search';
 import Prism from './modules/highlight';
+import Masonry from './modules/masonry';
 // import lazysizes from 'lazysizes';
 // import Lazylaod from './modules/lazyload';
 // import Pjax from 'pjax';
@@ -8,6 +9,7 @@ import Prism from './modules/highlight';
 
 (function () {
   new Search(document.getElementsByClassName('Js-search'));
+  new Masonry(document.getElementById('js-masonry'));
   new Prism();
 }());
 
