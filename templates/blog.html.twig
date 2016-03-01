@@ -20,7 +20,7 @@
 		<div class="container content-wrapper">
       <div class="js-masonry u-marginCenter">
   			{% for child in collection %}
-  				{% include 'partials/article_micro.html.twig' with {'blog':page, 'page':child, 'truncate':true} %}
+  				{% include 'partials/Card.html.twig' with {'blog':page, 'page':child, 'truncate':true} %}
   			{% endfor %}
 
   			{% if config.plugins.pagination.enabled and collection.params.pagination %}

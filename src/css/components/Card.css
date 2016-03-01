@@ -1,36 +1,9 @@
 /* Card
 -------------------------------------------------------------------------------- */
 .Card {
-  /*width: 100%;*/
   background-color: $colorHeaderBg;
-  /*margin: 10px 0;*/
   border-top: 5px solid $colorPrimary;
 }
-
-/*.Card:nth-child(even) {
-  margin-right: 0;
-  margin-left: 10px;
-
-  @media (--viewport-huge) {
-    margin-right: 25px;
-    margin-left: 0;
-  }
-}
-
-.Card:nth-child(3n + 3) {
-
-  @media (--viewport-huge) {
-    margin-right: 0;
-    margin-left: 0;
-  }
-}*/
-
-/*.Card:hover {
-  .micro-image:after {
-    transition: background-color 0.2s ease-in;
-    background-color: color($colorBlack a(5%));
-  }
-}*/
 
 .Card--overview {
   width: 320px;
@@ -67,9 +40,12 @@
 /* Card-image
 -------------------------------------------------------------------------------- */
 .Card-image {
+  background-size: cover;
+  background-position: top center;
+  height: 180px;
+  width: 100%;
   display: block;
   line-height: 0;
-  position: relative;
 
   img {
     width: 100%;
@@ -89,7 +65,7 @@
 /* Card header
 -------------------------------------------------------------------------------- */
 .Card-header {
-  padding: 22px 26px 30px;
+  /*padding: 22px 26px 30px;*/
   padding-bottom: 0;
 
   h2 {

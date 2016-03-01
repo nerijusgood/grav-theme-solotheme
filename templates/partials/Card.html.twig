@@ -1,22 +1,31 @@
 <article class="Card Card--overview">
 
+  <!-- Variables -->
   {% set header_image = page.header.header_image|defined(true) %}
   {% set header_image_width  = page.header.header_image_width|defined(475) %}
   {% set header_image_height = page.header.header_image_height|defined(360) %}
   {% set header_image_file = page.header.header_image_file %}
 
-  {% if header_image %}
-    <a class="Card-image" href="{{ page.url }}">
-      {% if header_image_file %}
-        {% set header_image_media = page.media.images[header_image_file] %}
-      {% else %}
-        {% set header_image_media = page.media.images|first %}
-      {% endif %}
-      {{ header_image_media.cropZoom(header_image_width, header_image_height).html }}
-    </a>
-  {% endif %}
-
+  <!-- Markup -->
   <header class="Card-header">
+    <!-- Header Image -->
+    <div class="Card-imgHolder">
+      {% if header_image %}
+        {% if header_image_file %}
+          {% set header_image_media = page.media.images[header_image_file] %}
+        {% else %}
+          {% set header_image_media = page.media.images|first %}
+        {% endif %}
+
+        {% if header_image_media %}
+          <a class="Card-image" href="{{ page.url }}" style="background-image:url('{{ header_image_media.cropZoom(header_image_width, header_image_height).url }}')"></a>
+        {% else %}
+          <a class="Card-image" href="{{ page.url }}" style="background-image:url('http://placehold.it/475x360')"></a>
+        {% endif %}
+      {% endif %}
+    </div>
+
+    <!-- Tags -->
     {% if page.taxonomy.tag %}
       <ul class="Tag-group">
         {% for tag in page.taxonomy.tag %}
@@ -27,6 +36,7 @@
       </ul>
     {% endif %}
 
+    <!-- Heading -->
     <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
   </header>
 
