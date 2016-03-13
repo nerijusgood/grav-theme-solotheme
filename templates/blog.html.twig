@@ -17,14 +17,16 @@
 			{% include 'partials/breadcrumbs.html.twig' %}
 		{% endif %} #}
 
-		<div class="container content-wrapper blog">
-			{% for child in collection %}
-				{% include 'partials/article_micro.html.twig' with {'blog':page, 'page':child, 'truncate':true} %}
-			{% endfor %}
+		<div class="container Trailer Leader">
+      <div class="js-masonry u-marginCenter">
+  			{% for child in collection %}
+  				{% include 'partials/Card.html.twig' with {'blog':page, 'page':child, 'truncate':true} %}
+  			{% endfor %}
 
-			{% if config.plugins.pagination.enabled and collection.params.pagination %}
-				{% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
-			{% endif %}
+  			{% if config.plugins.pagination.enabled and collection.params.pagination %}
+  				{% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
+  			{% endif %}
+      </div>
 		</div>
 	{% endblock %}
 

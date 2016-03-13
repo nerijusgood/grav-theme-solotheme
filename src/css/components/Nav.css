@@ -1,5 +1,6 @@
 /* Nav
 -------------------------------------------------------------------------------- */
+
 .Nav {
   @extend .flex-row;
   @extend .flex-center;
@@ -71,7 +72,6 @@
 .Nav-burger {
   @extend .flex-column;
   @extend .flex-center;
-  /*position: fixed;*/
   z-index: $ztop;
   top: 16px;
   right: 20px;
@@ -113,10 +113,12 @@
   transform: rotate(-45deg);
   margin-top: 10px;
 }
+
 #Nav-burger:checked + .Nav-burger .bottom-bun {
   opacity: 0;
   transform: rotate(45deg);
 }
+
 #Nav-burger:checked + .Nav-burger .meat {
   transform: rotate(45deg);
   margin-top: -4px;

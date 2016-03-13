@@ -1,0 +1,31 @@
+/* Block
+-------------------------------------------------------------------------------- */
+.Block {
+  width: 100%;
+  background-color: $colorHeaderBg;
+  margin: 0;
+}
+
+.Block-spacing {
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media (--viewport-medium) {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  @media (--viewport-large) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.Block-content {
+  width: 100%;
+
+  @media (--viewport-large) {
+    max-width: 960px;
+  }
+}

@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'freightsans_problack';
+  src: url('../fonts/freigsanproblk-solofront.eot');
+  src:
+    url('../fonts/freigsanproblk-solofront.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/freigsanproblk-solofront.woff2') format('woff2'),
+    url('../fonts/freigsanproblk-solofront.woff') format('woff'),
+    url('../fonts/freigsanproblk-solofront.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'freightsans_probook';
+  src: url('../fonts/freightsans_probook-solofront.eot');
+  src:
+    url('../fonts/freightsans_probook-solofront.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/freightsans_probook-solofront.woff2') format('woff2'),
+    url('../fonts/freightsans_probook-solofront.woff') format('woff'),
+    url('../fonts/freightsans_probook-solofront.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'source_sans_proregular';
+  src: url('../fonts/sourcesanspro-regular-solofront.eot');
+  src:
+    url('../fonts/sourcesanspro-regular-solofront.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/sourcesanspro-regular-solofront.woff2') format('woff2'),
+    url('../fonts/sourcesanspro-regular-solofront.woff') format('woff'),
+    url('../fonts/sourcesanspro-regular-solofront.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$fontBlack: 'freightsans_problack', Arial, sans-serif;
+$fontHead: 'freightsans_probook', Arial, sans-serif;
+$fontReg: 'source_sans_proregular', Arial, sans-serif;
+
+html {
+  font-family: $fontReg;
+}
+
+@font-face {
+  font-family: 'freightsans_prolight';
+  src: url('../fonts/freigsanprolig-solofront.eot');
+  src:
+    url('../fonts/freigsanprolig-solofront.eot?#iefix') format('embedded-opentype'),
+    url('vfreigsanprolig-solofront.woff2') format('woff2'),
+    url('../fonts/freigsanprolig-solofront.woff') format('woff'),
+    url('../fonts/freigsanprolig-solofront.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'freightsans_probook';
+  src: url('../fonts/freigsanprobook-solofront.eot');
+  src:
+    url('../fonts/freigsanprobook-solofront.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/freigsanprobook-solofront.woff2') format('woff2'),
+    url('../fonts/freigsanprobook-solofront.woff') format('woff'),
+    url('../fonts/freigsanprobook-solofront.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -2,11 +2,11 @@
 import Pjax from 'pjax';
 
 export default class pjax {
-	constructor() {
-		console.log(Pjax.isSupported());
+  constructor () {
+    console.log(Pjax.isSupported());
 
-		Pjax({
-			elements: ".main"
-		});
-	}
+    Pjax({
+      elements: '.main'
+    });
+  }
 }

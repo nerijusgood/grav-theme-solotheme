@@ -8,21 +8,25 @@ h5 {
 h1 {
     font-size: 2.25rem;
     line-height: 2.5rem;
+    margin: 0 0 1.525rem;
 }
 
 h2 {
     font-size: 1.875rem;
     line-height: 2.5rem;
+    margin: 0 0 1.4rem;
 }
 
 h3 {
     font-size: 1.5rem;
     line-height: 2.5rem;
+    margin: 0 0 1.4rem;
 }
 
 h4 {
     font-size: 18px;
     line-height: 1.125rem;
+    margin: 0 0 1.25rem;
 }
 
 /* Won't be used here */
@@ -37,10 +41,7 @@ h6 {
     line-height: 1.25rem;
 }
 
-p + h1,
-p + h2,
-p + h3,
-p + h4,
-p + h5 {
-    margin-top: 2.1875rem;
+.Title-styled {
+  text-shadow: 2px 4px 0 rgba(89, 176, 186, 0.1);
+  color: $colorGray;
 }

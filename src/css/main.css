@@ -2,10 +2,11 @@
 
 /* Settings
 -------------------------------------------------------------------------------- */
-@import "base/settings";
-@import "base/fonts";
-@import "base/icons";
-@import "base/helpers";
+@import "base/Variables";
+@import "base/Fonts";
+@import "base/Icons";
+@import "base/Utils";
+@import "base/Spacing";
 
 /* Vendor
 -------------------------------------------------------------------------------- */
@@ -23,19 +24,19 @@
 
 /* Components
 -------------------------------------------------------------------------------- */
+@import "components/Block";
 @import "components/Button";
 @import "components/List";
 @import "components/Tags";
 @import "components/Nav";
 @import "components/Forms";
-@import "components/article-micro";
-@import "components/article-header";
-@import "components/article-main";
+@import "components/Card";
+@import "components/Article";
 @import "components/Pagination";
 @import "components/Alert";
-@import "components/comments";
+@import "components/Comments";
 @import "components/Loader";
-@import "components/page-header";
+@import "components/Heading";
 
 /* Partials
 -------------------------------------------------------------------------------- */

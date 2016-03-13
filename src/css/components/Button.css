@@ -56,22 +56,22 @@
 
 .Button--outline {
   background-color: transparent;
-  border: 2px solid $colorWhite;
+  color: $colorPrimary;
+  border: 2px solid $colorPrimary;
 
   &:hover {
-    background-color: $colorWhite;
+    background-color: $colorPrimary;
     transition: background-color 0.1s ease-in, color 0.1s ease-in;
-    color: $colorGray;
+    color: $colorWhite;
   }
 }
 
-.Button--icon:before {
+.Button--icon::before {
   padding-right: 5px;
   vertical-align: middle;
   line-height: 38px;
 }
 
 .Button-group {
-  margin: 10px 0;
   display: flex;
 }

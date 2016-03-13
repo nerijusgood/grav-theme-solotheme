@@ -1,4 +1,6 @@
-.alert {
+/* Tags
+-------------------------------------------------------------------------------- */
+.Alert {
   padding: 10px;
   border: 1px solid $colorGrayLight;
 }

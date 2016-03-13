@@ -1,0 +1,15 @@
+.Trailer {
+  padding-bottom: 30px;
+}
+
+.Trailer--sm {
+  padding-bottom: 20px;
+}
+
+.Leader {
+  padding-top: 30px;
+}
+
+.Leader--sm {
+  padding-top: 20px;
+}

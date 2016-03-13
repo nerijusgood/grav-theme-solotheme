@@ -1,0 +1,47 @@
+/* Article
+-------------------------------------------------------------------------------- */
+.Article {
+  h2,
+  h3,
+  h4 {
+    text-shadow: 2px 4px 0 rgba(89, 176, 186, 0.1);
+    color: $colorPrimary;
+  }
+
+  p {
+    color: $colorGray;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+
+.Article-title {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  text-shadow: 2px 4px 0 rgba(89, 176, 186, 0.1);
+
+  a {
+    font-size: 3.2rem;
+    font-family: $fontHead;
+    color: $colorGray;
+  }
+}
+
+.Article-byline {
+  display: inline-block;
+
+  span {
+    font-family: $fontReg;
+    font-size: 16px;
+    color: $colorGrayLight;
+  }
+}

@@ -1,23 +1,41 @@
-// 'use strict'
-import $ from 'dominus';
+import { forEach } from '../utils';
 
 export default class search {
-	constructor() {
-		const input = $('.form-search-input');
-		const submit = $('.form-search-submit');
+  constructor () {
+    const input = document.querySelectorAll('.Form-search-input');
+    const submit = document.querySelectorAll('.Form-search-submit');
 
-		for (var i = 0; i < input.length; i++) {
-			input[i].addEventListener('keypress', this.searchInput.bind(this), false);
-		}
-	}
+    // Watch every letter type
+    if (input.length) {
+      forEach(input, (i, el) => {
+        el.addEventListener('keypress', this.handleInput.bind(this), false);
+      });
+    }
 
-	// @TODO not working target selector for input! :(
-	searchInput(e) {
-		var target = e.target;
-		if (e.which == 13 && target.value.length > 1) {
-			var query = $(target).value();
-			e.preventDefault;
-			window.location.href = $(target).attr('data-search-input') + ':' + query;
-		}
-	}
+    // Submit button click event
+    if (submit.length) {
+      forEach(submit, (i, el) => {
+        el.addEventListener('click', this.handleSubmit.bind(this), false);
+      });
+    }
+  }
+
+  // on 'enter' and if value more than > 1 search
+  handleInput (e) {
+    const target = e.target;
+    const query = target.value;
+    if (e.which === 13 && query.length > 1) {
+      e.preventDefault;
+      window.location.href = target.getAttribute('data-search-input') + ':' + query;
+    }
+  }
+
+  // butotn click value more than > 1 search
+  handleSubmit (e) {
+    const target = e.target;
+    const query = target.previousElementSibling.value;
+    if (query.length > 1) {
+      window.location.href = target.previousElementSibling.getAttribute('data-search-input') + ':' + query;
+    }
+  }
 }
