@@ -2,10 +2,10 @@
 
 /* Settings
 -------------------------------------------------------------------------------- */
-@import "base/settings";
-@import "base/fonts";
-@import "base/icons";
-@import "base/helpers";
+@import "base/Variables";
+@import "base/Fonts";
+@import "base/Icons";
+@import "base/Utils";
 
 /* Vendor
 -------------------------------------------------------------------------------- */
