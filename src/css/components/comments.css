@@ -9,6 +9,10 @@
     max-width: 960px;
   }
 
+  @media (--viewport-huge) {
+    border-top: 2px solid $colorGrayLightest;
+  }
+
   &:last-child {
     margin-bottom: 20px;
   }
