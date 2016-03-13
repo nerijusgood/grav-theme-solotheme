@@ -1,8 +1,0 @@
-.page-header {
-    @extend .container-spacing;
-    background-color: $colorSecondary;
-
-    h1 {
-        color: $colorWhite;
-    }
-}

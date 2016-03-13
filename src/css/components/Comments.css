@@ -8,14 +8,9 @@
 }
 
 .comments--container {
-  @extend .container-spacing;
 
   @media (--viewport-large) {
     max-width: 960px;
-  }
-
-  &:last-child {
-    margin-bottom: 20px;
   }
 }
 

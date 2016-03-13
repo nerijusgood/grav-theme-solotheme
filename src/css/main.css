@@ -24,6 +24,7 @@
 
 /* Components
 -------------------------------------------------------------------------------- */
+@import "components/Block";
 @import "components/Button";
 @import "components/List";
 @import "components/Tags";
@@ -35,7 +36,7 @@
 @import "components/Alert";
 @import "components/Comments";
 @import "components/Loader";
-@import "components/page-header";
+@import "components/Heading";
 
 /* Partials
 -------------------------------------------------------------------------------- */

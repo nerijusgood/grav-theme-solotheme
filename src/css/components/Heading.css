@@ -1,0 +1,8 @@
+.Heading {
+  background-color: $colorSecondary;
+
+  h1 {
+    color: $colorWhite;
+    margin: 0;
+  }
+}

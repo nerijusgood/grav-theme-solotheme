@@ -21,33 +21,3 @@
     max-width: 1100px;
   }
 }
-
-.content-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  padding: 10px 0 20px;
-
-  @media (--viewport-medium) {
-    padding: 20px 0;
-  }
-}
-
-.block-content {
-  width: 100%;
-  background-color: $colorHeaderBg;
-  margin: 0;
-}
-
-.container-spacing {
-  box-sizing: border-box;
-  padding: 0 20px;
-
-  @media (--viewport-medium) {
-    padding: 0 35px;
-  }
-
-  @media (--viewport-large) {
-    margin: 0 auto;
-  }
-}

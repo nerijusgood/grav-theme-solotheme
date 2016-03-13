@@ -5,7 +5,7 @@
       <div class="Alert">{{ form.message }}</div>
     {% endif %}
 
-    <h2 class="">{{'PLUGIN_COMMENTS.ADD_COMMENT'|t}}</h2>
+    <h2 class="Title-styled">{{'PLUGIN_COMMENTS.ADD_COMMENT'|t}}</h2>
 
     <form class="form-field Form" name="{{ grav.config.plugins.comments.form.name }}"
       action="{{ grav.config.plugins.comments.form.action ?  base_url ~ grav.config.plugins.comments.form.action : page.url }}"
@@ -31,30 +31,29 @@
     </form>
   </div>
 
-  <div class="comments--container">
+  {% if grav.twig.comments|length %}
+    <div class="comments--container Leader">
 
-    {% if grav.twig.comments|length %}
+        <h2 class="Title-styled">{{'PLUGIN_COMMENTS.COMMENTS'|t}}</h2>
 
-      <h2>{{'PLUGIN_COMMENTS.COMMENTS'|t}}</h2>
+        <ol class="comments--overview">
+        {% for comment in grav.twig.comments|array_reverse %}
+          <li>
+            <div class="comments--author">
+              <h3 class="Title-styled">{{comment.author}}</h3>
+              <span class="comments--author-date">
+                <a href=''>{{comment.date|e}}</a>
+              </span>
 
-      <ol class="comments--overview">
-      {% for comment in grav.twig.comments|array_reverse %}
-        <li>
-          <div class="comments--author">
-            <h3>{{comment.author}}</h3>
-            <span class="comments--author-date">
-              <a href=''>{{comment.date|e}}</a>
-            </span>
+            </div>
 
-          </div>
-
-          <div class="comments--comment">
-            <p>{{comment.text}}</p>
-          </div>
-        </li>
-      {% endfor %}
-      </ol>
-
-    {% endif %}
-  </div>
+            <div class="comments--comment">
+              <p>{{comment.text}}</p>
+            </div>
+          </li>
+        {% endfor %}
+        </ol>
+    </div>
+  {% endif %}
+  
 {% endif %}
