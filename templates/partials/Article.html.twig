@@ -17,44 +17,44 @@
 
     <div class="Article-hcontent">
       {% if page.taxonomy.tag %}
-        <ul class="Tag-group">
+        <ul class="Tag-group u-inline">
           {% for tag in page.taxonomy.tag %}
           <li><a class="Button Button--outline" href="{{ blog.url }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a></li>
           {% endfor %}
         </ul>
       {% endif %}
 
-      <h1 class="Article-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
-
       <div class="Article-byline">
         <span>{{ page.date|date("d") }}</span>
         <span>{{ page.date|date("M") }}</span>
         <span>{{ page.date|date("Y") }}</span>
       </div>
+
+      <h1 class="Article-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
     </div>
   </header>
 
-  <main class="Article-body">
-      {% if page.header.metadata.demo or page.header.metadata.download or page.header.metadata.github %}
-          <div class="Button-group center-hori">
-              {% if page.header.metadata.demo %}
-                  <a class="Button Button--secondary" href="{{ page.header.metadata.demo }}">Demo</a>
-              {% endif %}
+  <main class="Article-body Trailer Leader">
+    {% if page.header.metadata.demo or page.header.metadata.download or page.header.metadata.github %}
+      <div class="Button-group center-hori">
+        {% if page.header.metadata.demo %}
+          <a class="Button Button--secondary" href="{{ page.header.metadata.demo }}">Demo</a>
+        {% endif %}
 
-              {% if page.header.metadata.download %}
-                  <a class="Button Button--secondary Button--icon icon-github" href="{{ page.header.metadata.download }}">Download</a>
-              {% endif %}
+        {% if page.header.metadata.download %}
+          <a class="Button Button--secondary Button--icon icon-github" href="{{ page.header.metadata.download }}">Download</a>
+        {% endif %}
 
-              {% if page.header.metadata.github %}
-                  <a class="Button Button--secondary Button--icon icon-github" href="{{ page.header.metadata.github }}">GitHub</a>
-              {% endif %}
-          </div>
-      {% endif %}
+        {% if page.header.metadata.github %}
+          <a class="Button Button--secondary Button--icon icon-github" href="{{ page.header.metadata.github }}">GitHub</a>
+        {% endif %}
+      </div>
+    {% endif %}
 
-      {{ page.content }}
+    {{ page.content }}
   </main>
 
-  <footer class="Article-footer">
+  <footer class="Article-footer Trailer Leader">
       {% if show_prev_next %}
           <p class="prev-next">
               {% if not page.isFirst %}
@@ -68,8 +68,8 @@
       {% endif %}
   </footer>
 
-  <div class="comments">
-      {% include 'partials/comments.html.twig' with {'page': page} %}
+  <div class="comments Trailer Leader">
+      {% include 'partials/Comment.html.twig' with {'page': page} %}
   </div>
 
 </article>

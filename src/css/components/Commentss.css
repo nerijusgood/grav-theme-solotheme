@@ -1,16 +1,17 @@
 /* Common classes */
 .comments {
-}
-.comments--container {
-  @extend .container-spacing;
   border-top: 10px solid $colorGrayLightest;
-
-  @media (--viewport-large) {
-    max-width: 960px;
-  }
 
   @media (--viewport-huge) {
     border-top: 2px solid $colorGrayLightest;
+  }
+}
+
+.comments--container {
+  @extend .container-spacing;
+
+  @media (--viewport-large) {
+    max-width: 960px;
   }
 
   &:last-child {
