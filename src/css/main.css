@@ -6,6 +6,7 @@
 @import "base/Fonts";
 @import "base/Icons";
 @import "base/Utils";
+@import "base/Spacing";
 
 /* Vendor
 -------------------------------------------------------------------------------- */
@@ -32,7 +33,7 @@
 @import "components/Article";
 @import "components/Pagination";
 @import "components/Alert";
-@import "components/comments";
+@import "components/Comments";
 @import "components/Loader";
 @import "components/page-header";
 

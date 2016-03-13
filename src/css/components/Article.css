@@ -37,46 +37,40 @@
 }
 
 .Article-hcontent {
-  position: absolute;
-  top: 0;
-  left: 0;
+  box-sizing: border-box;
   height: 100%;
   width: 100%;
-  display: flex;
+  /*display: flex;
+  box-sizing: border-box;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-color: color($colorBlack a(35%));
-  transition: 0.2s opacity ease-in;
-  padding: 0 5%;
-
-  @media (--viewport-medium) {
-    padding: 0 10%;
-  }
+  justify-content: center;*/
+  /*background-color: color($colorBlack a(35%));*/
+  /*transition: 0.2s opacity ease-in;*/
+  /*padding: 0 5%;*/
 }
 
 .Article-title {
   width: 100%;
-  text-align: center;
   margin: 0;
   padding: 0;
   line-height: 1;
 
   a {
-    font-size: 2.5rem;
-    font-family: $fontReg;
-    font-weight: 800;
-    color: $colorWhite;
+    font-size: 2.6rem;
+    font-family: $fontHead;
+    /*font-weight: 800;*/
+    color: $colorGray;
   }
 }
 
 .Article-byline {
-  margin: 15px 0 10px;
+  display: inline-block;
 
   span {
     font-family: $fontReg;
     font-size: 16px;
-    color: $colorWhite;
+    color: $colorGrayLight;
   }
 }
 

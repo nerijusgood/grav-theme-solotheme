@@ -28,3 +28,7 @@
 .u-marginCenter {
   margin: 0 auto;
 }
+
+.u-inline {
+  display: inline-block !important;
+}

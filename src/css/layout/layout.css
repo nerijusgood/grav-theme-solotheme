@@ -41,14 +41,13 @@
 
 .container-spacing {
   box-sizing: border-box;
-  padding: 20px;
+  padding: 0 20px;
 
   @media (--viewport-medium) {
-    padding: 20px 35px;
+    padding: 0 35px;
   }
 
   @media (--viewport-large) {
-    padding: 30px 60px;
     margin: 0 auto;
   }
 }
