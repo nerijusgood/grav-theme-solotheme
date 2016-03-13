@@ -38,9 +38,3 @@ $zmin: 3;
 @custom-media --viewport-huge (min-width: 80rem);  /* 1280 */
 
 @custom-media --viewport-monitor (min-width: 85.375rem);  /* 1366 */
-
-
-/* TODO: cleanup! performance  */
-html * {
-  box-sizing: border-box;
-}

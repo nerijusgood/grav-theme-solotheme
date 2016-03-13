@@ -1,15 +1,12 @@
 .main {
-	padding-left: 0;
+  box-sizing: border-box;
 	width: 100%;
 	min-height: 100vh;
+	padding-left: 0;
 	background-color: $colorBg;
 	/* Margin collapse fix */
 	padding-bottom: 1px;
 	margin-bottom: -1px;
-
-	/*@media (--viewport-medium) {
-		padding-left: 250px;
-	}*/
 
 	@media (--viewport-large) {
 		padding-left: 290px;

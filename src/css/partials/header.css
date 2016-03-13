@@ -1,6 +1,7 @@
 .header {
 	@extend .container-spacing;
 	@extend .flex-row;
+  box-sizing: border-box;
 	justify-content: space-between;
 	align-items: center;
 	padding-top: 0;
