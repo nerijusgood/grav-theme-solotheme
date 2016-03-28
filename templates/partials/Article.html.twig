@@ -71,6 +71,7 @@
 
 <section class="Block">
   <div class="comments Block-content Block-spacing Trailer Leader">
-    {% include 'partials/Comments.html.twig' with {'page': page} %}
+    {{ jscomments('disqus', { shortname: 'solofront' }) }}
+    <!-- {% include 'partials/Comments.html.twig' with {'page': page} %} -->
   </div>
 </section>
